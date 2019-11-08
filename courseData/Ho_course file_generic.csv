@@ -1,0 +1,121 @@
+CourseNumber,CourseName,Usual Semester,Genus
+A_E_M_S2097,"AHSE, ENGR, MTH, SCI 2097: Cross-disciplinary Research Methods",Either,ELECTIVE
+ADV MATH_Wildcard,ADV MATH_Wildcard,Either,ADV MATH
+AHS_Wildcard,AHS_Wildcard,Either,AHS Fnd
+AHSE0112,AHSE0112: The Olin Conductorless Orchestra,Both,AHS
+AHSE1100,AHSE1100: History of Technology: A Cultural & Contextual Approach,Fall,AHS Fnd
+AHSE1122,"AHSE1122: The Wired Ensemble -Instruments, Voices, Players",Fall,AHS Fnd
+AHSE1135,"AHSE1135: The Digital Eye: Photography, Vision, and Visual Communication",Fall,AHS Fnd
+AHSE1145,AHSE1145: The Human Connection: Tools and Concepts from Anthropology for Understanding Today's World,Fall,AHS Fnd
+AHSE1148,AHSE1148: Dirt to Shirt: Global Garments in Context,Fall,AHS Fnd
+AHSE1150,AHSE1150: What is 'I'?,Fall,AHS Fnd
+AHSE1155,AHSE1155: Identity from the Mind & the Brain: Who Am I and How Do I Know,Fall,AHS Fnd
+AHSE1515,AHSE1515: Products and Markets,Spring,ENTRP Fnd
+AHSE2131,AHSE2131: Responsive Drawing and Visual Thinking,Fall,AHS
+AHSE2141_ENGR2141,AHSE2141_ENGR2141: Engineering for Humanity,Spring,AHS
+AHSE2150_SCI1250,AHSE2150_SCI1250: Six Microbes that Changed the World with Laboratory,Spring,AHS
+AHSE2150_SCI1250,AHSE2150_SCI1250: Six Microbes that Changed the World with Laboratory,Spring,BIO
+AHSE2155,AHSE2155: Constructing and Performing the Self,Spring,AHS
+AHSE2170,AHSE2170: Teaching and Learning in Undergraduate Science and Engineering,Fall,AHS
+AHSE2180,AHSE2180: Narrative Psychology,Spring,AHS
+AHSE2515,AHSE2515: Iterate,Fall,ENTRP
+AHSE2515,AHSE2515: Iterate,Spring,ENTRP
+AHSE3130,AHSE3130: Advanced Digital Photography,Spring,AHS
+AHSE3515,AHSE3515: Launch,Spring,ENTRP
+BIO_Wildcard,New Course,Either,BIO
+CORE_E:C_Wildcard,CORE_E:C_Wildcard,Either,Core E:C
+CORE_E:ROBO_Wildcard,CORE_E:ROBO_Wildcard,Either,Core E:Robo
+DESIGN_Wildcard,ENGR3899: Educational Design Studio,Either,DESIGN Dpth
+DESIGN_Wildcard,DESIGN_Wildcard,Either,DESIGN Dpth
+ECE_Wildcard,ECE_Wildcard,Either,ECE Elective
+ELECTIVE_Wildcard,ELECTIVE_Wildcard,Either,ELECTIVE
+ENGR1125,"ENGR1125: Introduction to Sensors, Instrumentation and Measurement",Fall,QE Fnd
+ENGR1200,ENGR1200: Design Nature,Fall,DESIGN Fnd
+ENGR2110,ENGR2110: Principles of Engineering,Fall,QE Fnd
+ENGR2160,ENGR2160: DREAM Designing Resources for Empowerment,Spring,ELECTIVE
+ENGR2250,ENGR2250: User-Oriented Collaborative Design,Spring,DESIGN Fnd
+ENGR2320,ENGR2320: Mechanics of Solids & Structures,Fall,Core ME
+ENGR2330,ENGR2330: Introduction to Mechanical Prototyping,Spring,ELECTIVE
+ENGR2340,ENGR2XXXA: Engineering Systems Analysis: Dynamics,Spring,QE Fnd
+ENGR2350,ENGR2350: Thermodynamics,Fall,Core ME
+ENGR2410,ENGR2XXXB: Engineering Systems Analysis: Signals,Spring,QE Fnd
+ENGR2420,ENGR2420: Intro Microelectronic Circuits with laboratory,Spring,Core ECE
+ENGR2510,ENGR2510: Software Design,Fall,Core E:C
+ENGR2510,ENGR2510: Software Design,Spring,Core E:C
+ENGR2600,ENGR2600: Topics in Bioengineering,Spring,E:Bio
+ENGR3110,ENGR3110: Elecanisms,Spring,ECE Elective
+ENGR3210,ENGR3210: Sustainable Design,Spring,DESIGN Dpth
+ENGR3220,ENGR3220: User Experience Design,Fall,DESIGN Dpth
+ENGR3225,ENGR3225: Systems,Spring,DESIGN Dpth
+ENGR3232,ENGR3232: Biomedical Device Design,Fall,DESIGN Dpth
+ENGR3235_or_SCI2235,ENGR3235_or_SCI2235: Biomimicry,Spring,DESIGN Dpth
+ENGR3240,ENGR3240: Tell the Story of What you Make,Either,DESIGN Dpth
+ENGR3242,ENGR3242: Quanititative Engineering Design,Spring,DESIGN Dpth
+ENGR3250,ENGR3250: Integrated Product Design,Fall,DESIGN Dpth
+ENGR3252,"ENGR3252: Technology, Accessiblilty, Design",Fall,DESIGN Dpth
+ENGR3260,ENGR3260: Design for Manufacturing,Spring,DESIGN Dpth
+ENGR3270,"ENGR3270: Real Products, Real Markets",Spring,DESIGN Dpth
+ENGR3290,ENGR3290: Affordable Design and Entrepreneurship,Both,DESIGN Dpth
+ENGR3310,ENGR3310: Transport Phenomena,Fall,Core ME
+ENGR3330,ENGR3330: Mechanical Design,Either,Core ME
+ENGR3345,ENGR3345: Mechanical and Aerospace Systems,Spring,ME Elective
+ENGR3350,ENGR3350: Finite Element Analysis,Fall,ME Elective
+ENGR3370,ENGR3370: Controls,Spring,ECE Elective
+ENGR3390,ENGR3390: Fundamentals of Robotics,Fall,Core E:Robo
+ENGR3392,ENGR3392: Robotics Systems Integration,Spring,Core E:Robo
+ENGR3410,ENGR3410: Computer Architecture,Fall,Core ECE
+ENGR3415,ENGR3415: Digital Signal Processing,Fall,Core ECE
+ENGR3420,ENGR3420: Introduction to Analog and Digital Communication,Spring,Core ECE
+ENGR3426,ENGR3426: Mixed Analog-Digital VLSI,Fall,ECE Elective
+ENGR3430,ENGR3430: Eclectronics,Fall,ECE Elective
+ENGR3440,ENGR3440: Principles of Wireless Communication,Spring,ECE Elective
+ENGR3520,ENGR3520: Foundations of Computer Science,Fall,Core E:C
+ENGR3525,ENGR3525: Software Systems,Spring,Core E:C
+ENGR3540,ENGR3540: Complexity Science,Spring,Core E:C
+ENGR3570,ENGR3570: Computer Networks,Spring,ELECTIVE
+ENGR3590,ENGR3590: A Computational Introduction to Robotics,Fall,Core E:Robo
+ENGR3610,ENGR3610: Biomedical Materials,Fall,E:Bio
+ENGR3650,ENGR3650: Structural Biomaterials,Spring,E:Bio
+ENGR3820,ENGR3820: Failure Analysis and Prevention,Spring,MATSCI_CHEM_ENV Engr
+ENGR4190,ENGR4190: SCOPE: Senior Capstone Program in Engineering,Both,CAPSTONE
+ENGR4290,ENGR4290: Affordable Design and Entrepreneurship Engineering Capstone,Both,CAPSTONE
+ENGX2000,Quantitative Engineering Analysis 1a,Spring,QE Fnd
+ENGX2001,Quantitative Engineering Analysis 1b,Spring,QE Fnd
+ENGX2010,Quantitative Engineering Analysis 2,Fall,QE Fnd
+ENTRP_Wildcard,ENTRP_Wildcard,Either,ENTRP
+GCSP_Wildcard,GCSP_Wildcard,Either,AHS
+MATSCI_CHEM_ENV Engr_Wildcard,MATSCI_CHEM_ENV Engr_Wildcard,Fall,MATSCI_CHEM_ENV Engr
+MATSCI_CHEM_ENV Engr_Wildcard,MATSCI_CHEM_ENV Engr_Wildcard,Spring,MATSCI_CHEM_ENV Engr
+ME_Wildcard,ME_Wildcard,Either,ME Elective
+MTH1111_SCI1111,MTH1111_SCI1111: Modeling and Simulation of the Physical World,Fall,QE Fnd
+MTH2110,MTH2110: Discrete Math,Fall,ADV MATH
+MTH2130,MTH2130: Probability and Statistics,Either,ProbStat
+MTH2131_ENGR3531,MTH2131_ENGR3531: Data Science,Either,ProbStat
+MTH2133_ENGR3533,MTH2133_ENGR3533: Computational Bayesian Statistics,Either,ProbStat
+MTH2135_ENGR3635,"MTH2135_ENGR3635: Neurotechnology, Brains and Machines",Either,ProbStat
+MTH3120,MTH3120: Partial Differential Equations,Spring,ADV MATH
+MTH3150,MTH3150: Numerical Methods and Scientific Computing,Spring,ADV MATH
+MTH3160,MTH3160: Intro to Complex Variables,Either,ADV MATH
+MTH3170,MTH3170: Nonlinear Dynamics and Chaos,Spring,ADV MATH
+PROB_STAT_Wildcard,MTH2136_SCI2136: Astronomy and Statistics: AstroStats,Either,ProbStat
+PROB_STAT_Wildcard,New Course,Either,ProbStat
+SCI1220,SCI1220: Human Genetics and Genomics with Laboratory,Spring,BIO
+SCI1230,SCI1230: Think Like a Biologist with Laboratory,Spring,BIO
+SCI1240,SCI1240: Designing Better Drugs with Laboratory,Fall,BIO
+SCI1260_AHSE2160,"SCI1260_AHSE2160: The Intersection of Biology, Art and Technology",Spring,BIO
+SCI1399_Wildcard,SCI1399: Paper Panacea,Fall,CHEM
+SCI1410,SCI1410: Materials Science and Solid State Chemistry,Spring,MATSCI_CHEM_ENV Engr
+SCI1410,SCI1410: Materials Science and Solid State Chemistry,Fall,MATSCI_CHEM_ENV Engr
+SCI1420,"SCI1420: Metals, Mining, and the Environment","Either
+",MATSCI_CHEM_ENV Engr
+SCI1430,SCI1430: Plastic Planet,"Either
+",MATSCI_CHEM_ENV Engr
+SCI1440,"SCI1440: Materials Creation, Consumption and Impact","Either
+",MATSCI_CHEM_ENV Engr
+SCI2210,SCI2210: Immunology,Fall,BIO
+SCI2214,SCI2214: Microbial Diversity,Fall,BIO
+SCI2215,"SCI2215: Emerging Technologies in Cancer Research, Diagnosis and Treatmt w/ Laboratory",Fall,BIO
+SCI2310_ENGR2810,SCI2310_ENGR2810: Environmental Analysis and Science,Either,MATSCI_CHEM_ENV Engr
+SCI3130,SCI3130: Advanced Classical Mechanics,Spring,ELECTIVE
+SUST2201,SUST2201: Introduction to Sustainability,Spring,ELECTIVE
+SUST3301,SUST3301: Sustainability Synthesis,Fall,ELECTIVE
