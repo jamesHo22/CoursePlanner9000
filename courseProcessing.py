@@ -21,6 +21,9 @@ generalRequirementsCredits = {
     SUB_CODE_AHSE: 28
 }
 
+def getAllCourses():
+    return courseTable.values
+ 
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 
