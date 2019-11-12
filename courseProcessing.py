@@ -24,6 +24,7 @@ generalRequirementsCredits = {
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 
+# STUDENT_REVIEW_ID (LATER),
 # COURSE_CODE (string), 
 # SUBJECT_CODE (string), 
 # START_TIME (datetime),
@@ -41,4 +42,9 @@ generalRequirementsCredits = {
 # PREREQUISITES, 
 # CREDITS, 
 # INSTRUCTORS, 
-# SECTION
+# SECTION,
+# RECOMMENDED_PRERQUISITES,
+# EST_HOURS,
+# LAB (BOOLEAN),
+# DATE_ADDED
+
