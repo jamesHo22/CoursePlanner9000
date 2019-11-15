@@ -1,4 +1,7 @@
+import pandas as pd
+from pathlib import Path
 class Major:
+    
     '''
     Major class contains
     - required general courses
@@ -28,6 +31,10 @@ class Major:
         self.SUB_CODE_SCI = 'SCI'
         self.SUB_CODE_SUST = 'SUST'
         self.SUB_CODE_ADMN = 'ADMN'
+        
+        self.cwd = Path.cwd()
+        self.filePath = Path(self.cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
+        self.courseTable = pd.read_csv(self.filePath)
 
         # Define a list of general courses
         self.generalRequiredCourses = []
