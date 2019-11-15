@@ -20,7 +20,7 @@ class Major:
         initializes a Major object that contains all the 
         general requirement credits and required courses
         '''
-
+        # TODO: Read a course requirement csv to determine the major requirements
         # Define code variables
         self.SUB_CODE_ENGR = 'ENGR'
         self.SUB_CODE_AHSE = 'AHSE'
