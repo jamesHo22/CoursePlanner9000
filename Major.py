@@ -29,10 +29,8 @@ class Major:
         self.SUB_CODE_SUST = 'SUST'
         self.SUB_CODE_ADMN = 'ADMN'
 
-        # Define general courses
-        self.generalRequiredCourses = {
-
-        }
+        # Define a list of general courses
+        self.generalRequiredCourses = []
         # General Requirements
         self.generalRequiredCredits = {
             self.SUB_CODE_ENGR: 46,
