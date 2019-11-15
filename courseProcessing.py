@@ -5,24 +5,15 @@ cwd = Path.cwd()
 filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
 courseTable = pd.read_csv(filePath)
 
-# Define graduation requirements
-# Define code variables
-SUB_CODE_ENGR = 'ENGR'
-SUB_CODE_AHSE = 'AHSE'
-SUB_CODE_MTH = 'MTH'
-SUB_CODE_SCI = 'SCI'
-SUB_CODE_SUST = 'SUST'
-SUB_CODE_ADMN = 'ADMN'
-# General Requirements
-generalRequirementsCredits = {
-    SUB_CODE_ENGR: 46,
-    SUB_CODE_MTH: 10,
-    SUB_CODE_SCI: 20,
-    SUB_CODE_AHSE: 28
-}
+# TODO: 
+def checkRequiredCourses(requiredCourses, currentCourses):
+    '''
+    This method will take in a list of required courses and current courses and return the courses you still need
+    '''
+    li_dif = [i for i in requiredCourses + currentCourses if i not in requiredCourses or i not in currentCourses] 
+    return li_dif 
 
-def getAllCourses():
-    return courseTable.values
+
  
 # TODO:
 # Make a SQL database with these columns
