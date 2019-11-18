@@ -21,8 +21,16 @@ def getCourseTimes(text):
     '''
     timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
     instructorRegexPat = "(.*?)(?=\/)"
-    times = re.findall(instructorRegexPat, text)
+    instructors = re.findall(instructorRegexPat, text)
+    times = re.findall(timeRegexPat, text)
     print(times)
+    print(instructors)
+    
+    # TODO: add 
+    # start time column, 
+    # end time column, 
+    # instructors column, 
+    # location column
     pass
 
 #%%
