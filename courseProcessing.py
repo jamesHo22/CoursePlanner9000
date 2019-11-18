@@ -19,9 +19,10 @@ def getCourseTimes(text):
     '''
     Looks for the start and end times of a course
     '''
-    regexPattern = "([A-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
-    x = re.findall(regexPattern, text)
-    print(x)
+    timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+    instructorRegexPat = "(.*?)(?=\/)"
+    times = re.findall(instructorRegexPat, text)
+    print(times)
     pass
 
 #%%
