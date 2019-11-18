@@ -1,5 +1,6 @@
 import pandas as pd
 from pathlib import Path
+import re
 # Read the data as a dataframe
 cwd = Path.cwd()
 filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
@@ -13,6 +14,17 @@ def checkRequiredCourses(requiredCourses, currentCourses):
     li_dif = [i for i in requiredCourses + currentCourses if i not in requiredCourses or i not in currentCourses] 
     return li_dif 
 
+#%%
+def getCourseTimes(text):
+    '''
+    Looks for the start and end times of a course
+    '''
+    regexPattern = "([A-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+    x = re.findall(regexPattern, text)
+    print(x)
+    pass
+
+#%%
 
  
 # TODO:
