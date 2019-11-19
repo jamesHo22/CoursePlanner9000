@@ -73,7 +73,7 @@ def getCourseTimes(text):
         # Convert all the strings into the right data types
         startTime = getDateTime(startTime)
         endTime = getDateTime(endTime)
-    
+        daysOffered = getWeekdays(day)
         print(instructor, day, startTime, endTime, location)
         print("\n")
     # return instructor, day, startTime, endTime, location
@@ -99,7 +99,29 @@ def getWeekdays(days):
     '''
     Given a string of characters, converts it into a boolean tuple with length of 7, 
     each representing whether or not the course is offered on each day
+    days: String, with characters in MTWRT representing when each class is offered in the week
+    returns: Tuple, indexed monday to friday in order. 1 means offered, 0 means not
     '''
+    if days is None:
+        return None
+    else:
+        daysDict = {
+                "M":0,
+                "T":0,
+                "W":0,
+                "R":0,
+                "F":0,
+            }
+        
+        listOfDays = list(days)
+            
+        for day in listOfDays:
+            daysDict[day] = 1
+        print(daysDict)
+
+    return daysDict.get("M"), daysDict.get("T"), daysDict.get("W"), daysDict.get("R"), daysDict.get("F")
+
+    
 
  
 # TODO:
