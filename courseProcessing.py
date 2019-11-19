@@ -32,8 +32,7 @@ def getCourseTimes(text):
     #     instructors.remove("")
     spaceDelimWords = text.split()
     filteredList = list(filter(lambda a: a != '/', spaceDelimWords))
-    
-
+    timeList = list(filter(lambda a: ';' in a, filteredList))
     # not the prettiest way, but its fast
     
     # print(times)
@@ -44,7 +43,8 @@ def getCourseTimes(text):
     # end time column, 
     # instructors column, 
     # location column
-    return filteredList
+    return timeList
+#%%
 
  
 # TODO:
@@ -73,4 +73,4 @@ def getCourseTimes(text):
 # EST_HOURS,
 # LAB (BOOLEAN),
 # DATE_ADDED
-# %%
+
