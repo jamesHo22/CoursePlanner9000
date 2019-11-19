@@ -12,13 +12,13 @@ def checkRequiredCourses(requiredCourses, currentCourses):
     li_dif = [i for i in requiredCourses + currentCourses if i not in requiredCourses or i not in currentCourses] 
     return li_dif 
 
-#%%
+
 def getAllCourses():
     cwd = Path.cwd()
     filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
     courseTable = pd.read_csv(filePath).values
     return courseTable
-
+#%%
 def getCourseTimes(text):
     '''
     Looks for the start and end times of a course
@@ -37,10 +37,21 @@ def getCourseTimes(text):
         timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
         instructorRegexPat = "(.*?)(?=\/)"
 
-        instructorRegexPatBen = "(\w+, \w+) / "
-        instructors = re.match(instructorRegexPatBen, line).group(1)
-        times = re.findall(timeRegexPat, line)
-        print(instructors, times)
+        instructorRegexPatAM = "(.*?) / ([a-zA-Z]+) (\d{2}:\d{2}[a-zA-Z]+)-(\d{2}:\d{2}[a-zA-Z]+); (.*)"
+        instructorRegexPatPM = "(.*?) / ([a-zA-Z]+) (\d{2}:\d{2})-(\d{2}:\d{2}[a-zA-Z]+); (.*)"
+        matchedObject = re.match(instructorRegexPatAM, line)
+        
+        # This check here is intended to switch between AM and PM time patterns
+        if matchedObject is None:
+            matchedObject = re.match(instructorRegexPatPM, line)
+        
+        instructor = matchedObject.group(1)
+        day = matchedObject.group(2)
+        startTime = matchedObject.group(3)
+        endTime = matchedObject.group(4)
+        location = matchedObject.group(5)
+    
+        print(instructor, day, startTime, endTime, location)
 
 
     # timeList = list(filter(lambda a: ';' in a, filteredList))
@@ -56,6 +67,12 @@ def getCourseTimes(text):
     # instructors column, 
     # location column
     pass
+#%%
+
+descriptions = courseTable['Faculty / Schedule'].values
+for i in range(3):
+    getCourseTimes(descriptions[i])
+    
 #%%
 
  
