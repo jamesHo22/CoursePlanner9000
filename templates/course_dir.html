@@ -30,7 +30,7 @@
 <!-- Collapsible Courses -->
 <p>
   {% for i in courses %}
-    <button type="button" class="collapsible">{{i[2]}}</button>
+    <button type="button" class="btn btn-primary btn-lg btn-block">{{i[2]}}</button>
     <div class="content">
       <!-- Content  -->
       <p>{{i[4]}}</p>
@@ -46,7 +46,7 @@
 
 <!-- Script for Collapsible Buttons  -->
 <script>
-var coll = document.getElementsByClassName("collapsible");
+var coll = document.getElementsByClassName("btn btn-primary btn-lg btn-block");
 var i;
 
 for (i = 0; i < coll.length; i++) {
