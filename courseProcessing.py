@@ -13,6 +13,12 @@ def checkRequiredCourses(requiredCourses, currentCourses):
     return li_dif 
 
 #%%
+def getAllCourses():
+    cwd = Path.cwd()
+    filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
+    courseTable = pd.read_csv(filePath).values
+    return courseTable
+
 def getCourseTimes(text):
     '''
     Looks for the start and end times of a course
