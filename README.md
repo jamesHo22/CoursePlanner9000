@@ -18,3 +18,8 @@ python app.py
 ```
 
 ## Authors
+James Ho
+
+Nathan Weil
+
+Jinfay Yuan

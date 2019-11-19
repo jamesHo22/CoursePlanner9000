@@ -38,19 +38,28 @@
     position: relative;
     padding-top: 88px;
     top: -44px;
-    }
-
-    .roadmap table {
-    /* width: 504px; */
-    font-size: 26px;
-    border-spacing: 0;
     width: 100%;
-    padding: 10px;
+    text-align: center;
 
     }
 
 
-
+    .roadmap th {
+        font-size: 32px;
+        font-weight: 700;    
+        border-collapse: separate;
+        border-spacing: 20px;
+    }
+    .roadmap td {
+        font-size: 22px;
+        width: 130px;
+        padding: 10px;
+        /* background-color: #ebebeb; */
+    }
+    .roadmap td:hover {
+        background-color: #0099ff;
+    }
+    
 
     /* CREDITS TABLE  */
 
@@ -58,24 +67,24 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     /* margin: auto; */
-    position: relative;
+    position: absolute;
     padding-top: 88px;
     top: -44px;
-
+    right: 80px;
     }
 
     .credits table {
     /* width: 504px; */
     font-size: 18px;
     border-spacing: 0;
-    width: 20%;
     margin-right: 100px;
-
-
+    padding: 50px;
     }
 
-
-
+    .credits td {
+        text-align: right;
+        padding-right: 20px;
+    }
 
     .controls {
     position: absolute;
@@ -83,18 +92,10 @@
     right: 0em;
     }
 
-    /* 
-    HOVER COLOR
+    
+    /* HOVER COLOR */
 
-    .stendig tr:hover {
-        color: #7512ed;    
-    }
-    .stendig h2 {
-    position: absolute;
-    top: 0;
-    letter-spacing: 50px;
-    font-size: 1.2em;
-    } */
+ 
 
     /* 
     CLICK AND DRAG
@@ -123,7 +124,6 @@
 </body>
 
 
-<!-- Credits table -->
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 <div class="credits">
   <table>
@@ -142,7 +142,7 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> 
 
 
 
@@ -153,19 +153,59 @@
   <table>
     <thead>
       <tr>
-        <td>Sem1</td>
-        <td>Sem2</td>
-        <td>Sem1</td>
-        <td>Sem2</td>
-        <td>Sem1</td>
-        <td>Sem2</td>
-        <td>Sem1</td>
-        <td>Sem2</td>
+        <th>Sem1</td>
+        <th>Sem2</td>
+        <th>Sem1</td>
+        <th>Sem2</td>
+        <th>Sem1</td>
+        <th>Sem2</td>
+        <th>Sem1</td>
+        <th>Sem2</td>
       </tr>
     </thead>
     <tbody>
         <tr>
+            <td>DesNat</td>
+            <td>QEA 1</td>
+            <td>QEA 2</td>
             <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>ModSim</td>
+            <td>P&M</td>
+            <td>SoftDes</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>ISIM</td>
+            <td></td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>Digital Eye</td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td>OFYI</td>
             <td> </td>
             <td> </td>
             <td> </td>
