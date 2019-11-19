@@ -2,6 +2,7 @@ import pandas as pd
 from pathlib import Path
 import re
 from datetime import datetime
+import numpy as np
 # Read the data as a dataframe
 
 
@@ -34,6 +35,7 @@ def getCourseTimes(text):
     eachLine = text.splitlines()
     print(eachLine)
     # Iterate through each array and use RegEx to pick out the parts you need
+    listOfCourses = list()
     for line in eachLine:
         
         # Parse the text to get usefull information
@@ -74,17 +76,8 @@ def getCourseTimes(text):
         startTime = getDateTime(startTime)
         endTime = getDateTime(endTime)
         daysOffered = getWeekdays(day)
-        print(instructor, day, startTime, endTime, location)
-        print("\n")
-    # return instructor, day, startTime, endTime, location
-    pass
-#%%
-
-descriptions = courseTable['Faculty / Schedule'].values
-for i in range(10):
-    getCourseTimes(descriptions[i])
-    print(i)
-    
+        listOfCourses.append([instructor, daysOffered, startTime, endTime, location])
+    return listOfCourses
 #%%
 def getDateTime(dateString):
     '''
@@ -117,12 +110,38 @@ def getWeekdays(days):
             
         for day in listOfDays:
             daysDict[day] = 1
-        print(daysDict)
 
     return daysDict.get("M"), daysDict.get("T"), daysDict.get("W"), daysDict.get("R"), daysDict.get("F")
 
-    
+#%%    
+cwd = Path.cwd()
+filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
+courseTable = pd.read_csv(filePath)
 
+# Make new columns
+# instructor column
+courseTable["instructor"] = np.nan
+# The days offered columns
+courseTable["M"] = np.nan
+courseTable["T"] = np.nan
+courseTable["W"] = np.nan
+courseTable["R"] = np.nan
+courseTable["F"] = np.nan
+# Start time
+courseTable["start_time"] = np.nan
+courseTable["end_time"] = np.nan
+courseTable["location"] = np.nan
+# Parse through the Facuilty/Schedule column and get all the info
+#%%
+descriptions = courseTable['Faculty / Schedule'].values
+for i in range(10):
+    listOfCourses = getCourseTimes(descriptions[i])
+    print(listOfCourses)
+    print("\n")
+
+
+
+# %%
  
 # TODO:
 # Make a SQL database with these columns
@@ -153,4 +172,4 @@ def getWeekdays(days):
 
 
 
-# %%
+
