@@ -2,9 +2,7 @@ import pandas as pd
 from pathlib import Path
 import re
 # Read the data as a dataframe
-cwd = Path.cwd()
-filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
-courseTable = pd.read_csv(filePath)
+
 
 # TODO: 
 def checkRequiredCourses(requiredCourses, currentCourses):
@@ -19,21 +17,34 @@ def getCourseTimes(text):
     '''
     Looks for the start and end times of a course
     '''
-    timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
-    instructorRegexPat = "(.*?)(?=\/)"
-    instructors = re.findall(instructorRegexPat, text)
-    times = re.findall(timeRegexPat, text)
-    print(times)
-    print(instructors)
+    # Import the table
+    cwd = Path.cwd()
+    filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
+    courseTable = pd.read_csv(filePath)
+
+    # Parse the text to get usefull information
+    # timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+    # instructorRegexPat = "(.*?)(?=\/)"
+    # instructors = re.findall(instructorRegexPat, text)
+    # times = re.findall(timeRegexPat, text)
+
+    # while("" in instructors): 
+    #     instructors.remove("")
+    spaceDelimWords = text.split()
+    filteredList = list(filter(lambda a: a != '/', spaceDelimWords))
     
+
+    # not the prettiest way, but its fast
+    
+    # print(times)
+    # print(instructors)
+
     # TODO: add 
     # start time column, 
     # end time column, 
     # instructors column, 
     # location column
-    pass
-
-#%%
+    return filteredList
 
  
 # TODO:
@@ -62,4 +73,4 @@ def getCourseTimes(text):
 # EST_HOURS,
 # LAB (BOOLEAN),
 # DATE_ADDED
-
+# %%
