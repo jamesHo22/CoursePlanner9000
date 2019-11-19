@@ -1,6 +1,7 @@
 import pandas as pd
 from pathlib import Path
 import re
+from datetime import datetime
 # Read the data as a dataframe
 
 
@@ -52,20 +53,6 @@ def getCourseTimes(text):
         location = matchedObject.group(5)
     
         print(instructor, day, startTime, endTime, location)
-
-
-    # timeList = list(filter(lambda a: ';' in a, filteredList))
-    # nameList = list(filter(lambda a: ';' in a, filteredList))
-    # not the prettiest way, but its fast
-    
-    # print(times)
-    # print(instructors)
-
-    # TODO: add 
-    # start time column, 
-    # end time column, 
-    # instructors column, 
-    # location column
     pass
 #%%
 
@@ -74,6 +61,10 @@ for i in range(3):
     getCourseTimes(descriptions[i])
     
 #%%
+def getDateTime(dateString):
+    dateObject = datetime.strptime(dateString, "%I:%M%p")
+    print(dateObject)
+    return dateObject
 
  
 # TODO:
@@ -103,3 +94,6 @@ for i in range(3):
 # LAB (BOOLEAN),
 # DATE_ADDED
 
+
+
+# %%
