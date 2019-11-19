@@ -28,17 +28,23 @@ def getCourseTimes(text):
     filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
     courseTable = pd.read_csv(filePath)
 
-    # Parse the text to get usefull information
-    # timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
-    # instructorRegexPat = "(.*?)(?=\/)"
-    # instructors = re.findall(instructorRegexPat, text)
-    # times = re.findall(timeRegexPat, text)
-
     # while("" in instructors): 
     #     instructors.remove("")
-    spaceDelimWords = text.split()
-    filteredList = list(filter(lambda a: a != '/', spaceDelimWords))
-    timeList = list(filter(lambda a: ';' in a, filteredList))
+    eachLine = text.splitlines()
+    print(eachLine)
+    for line in eachLine:
+        # Parse the text to get usefull information
+        timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+        instructorRegexPat = "(.*?)(?=\/)"
+
+        instructorRegexPatBen = "(\w+, \w+)"
+        instructors = re.match(instructorRegexPatBen, line).group
+        times = re.findall(timeRegexPat, line)
+        print(instructors, times)
+
+
+    # timeList = list(filter(lambda a: ';' in a, filteredList))
+    # nameList = list(filter(lambda a: ';' in a, filteredList))
     # not the prettiest way, but its fast
     
     # print(times)
@@ -49,7 +55,7 @@ def getCourseTimes(text):
     # end time column, 
     # instructors column, 
     # location column
-    return timeList
+    pass
 #%%
 
  
