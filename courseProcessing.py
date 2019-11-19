@@ -37,8 +37,8 @@ def getCourseTimes(text):
         timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
         instructorRegexPat = "(.*?)(?=\/)"
 
-        instructorRegexPatBen = "(\w+, \w+)"
-        instructors = re.match(instructorRegexPatBen, line).group
+        instructorRegexPatBen = "(\w+, \w+) / "
+        instructors = re.match(instructorRegexPatBen, line).group(1)
         times = re.findall(timeRegexPat, line)
         print(instructors, times)
 
