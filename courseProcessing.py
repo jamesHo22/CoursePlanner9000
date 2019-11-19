@@ -1,28 +1,51 @@
 import pandas as pd
 from pathlib import Path
+import re
 # Read the data as a dataframe
-cwd = Path.cwd()
-filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
-courseTable = pd.read_csv(filePath)
 
-# Define graduation requirements
-# Define code variables
-SUB_CODE_ENGR = 'ENGR'
-SUB_CODE_AHSE = 'AHSE'
-SUB_CODE_MTH = 'MTH'
-SUB_CODE_SCI = 'SCI'
-SUB_CODE_SUST = 'SUST'
-SUB_CODE_ADMN = 'ADMN'
-# General Requirements
-generalRequirementsCredits = {
-    SUB_CODE_ENGR: 46,
-    SUB_CODE_MTH: 10,
-    SUB_CODE_SCI: 20,
-    SUB_CODE_AHSE: 28
-}
 
-def getAllCourses():
-    return courseTable.values
+# TODO: 
+def checkRequiredCourses(requiredCourses, currentCourses):
+    '''
+    This method will take in a list of required courses and current courses and return the courses you still need
+    '''
+    li_dif = [i for i in requiredCourses + currentCourses if i not in requiredCourses or i not in currentCourses] 
+    return li_dif 
+
+#%%
+def getCourseTimes(text):
+    '''
+    Looks for the start and end times of a course
+    '''
+    # Import the table
+    cwd = Path.cwd()
+    filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
+    courseTable = pd.read_csv(filePath)
+
+    # Parse the text to get usefull information
+    # timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+    # instructorRegexPat = "(.*?)(?=\/)"
+    # instructors = re.findall(instructorRegexPat, text)
+    # times = re.findall(timeRegexPat, text)
+
+    # while("" in instructors): 
+    #     instructors.remove("")
+    spaceDelimWords = text.split()
+    filteredList = list(filter(lambda a: a != '/', spaceDelimWords))
+    timeList = list(filter(lambda a: ';' in a, filteredList))
+    # not the prettiest way, but its fast
+    
+    # print(times)
+    # print(instructors)
+
+    # TODO: add 
+    # start time column, 
+    # end time column, 
+    # instructors column, 
+    # location column
+    return timeList
+#%%
+
  
 # TODO:
 # Make a SQL database with these columns
