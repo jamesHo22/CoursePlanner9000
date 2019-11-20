@@ -33,7 +33,6 @@ def getCourseTimes(text):
     courseTable = pd.read_csv(filePath)
     # Split each line into an array
     eachLine = text.splitlines()
-    print(eachLine)
     # Iterate through each array and use RegEx to pick out the parts you need
     listOfCourses = list()
     for line in eachLine:
@@ -71,6 +70,9 @@ def getCourseTimes(text):
         # Add PM to the end of the startTime string so the format is the same for all time strings
         if "PM" in endTime and "AM" not in startTime:
             startTime = startTime + "PM"
+
+        if "AM" in endTime and "AM" not in startTime:
+            startTime = startTime + "AM"
 
         # Convert all the strings into the right data types
         startTime = getDateTime(startTime)
@@ -111,35 +113,46 @@ def getWeekdays(days):
         for day in listOfDays:
             daysDict[day] = 1
 
-    return daysDict.get("M"), daysDict.get("T"), daysDict.get("W"), daysDict.get("R"), daysDict.get("F")
+    return daysDict.get("M"), daysDict.get("T"), daysDict.get("W"), daysDict.get("R"), daysDict.get("F") 
 
-#%%    
-cwd = Path.cwd()
-filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
-courseTable = pd.read_csv(filePath)
-
-# Make new columns
-# instructor column
-courseTable["instructor"] = np.nan
-# The days offered columns
-courseTable["M"] = np.nan
-courseTable["T"] = np.nan
-courseTable["W"] = np.nan
-courseTable["R"] = np.nan
-courseTable["F"] = np.nan
-# Start time
-courseTable["start_time"] = np.nan
-courseTable["end_time"] = np.nan
-courseTable["location"] = np.nan
 # Parse through the Facuilty/Schedule column and get all the info
 #%%
-descriptions = courseTable['Faculty / Schedule'].values
-for i in range(10):
-    listOfCourses = getCourseTimes(descriptions[i])
-    print(listOfCourses)
-    print("\n")
+def formatCourses():
+    '''
+    takes the course data from my.olin.edu and creates a table with the corrent columns
+    '''
+    cwd = Path.cwd()
+    filePath = Path(cwd / 'courseData/2019_S1_offering.csv')
+    courseTable = pd.read_csv(filePath)
 
+    # Make new columns
+    # instructor column
+    counter = 0
+    formattedColumns = ['Course Code', 'Name', 'Req', 'Credits','Begin Date', 'End Date', 'Instructor', 'M', 'T', 'W', 'R', 'F', 'start_time', 'end_time', 'location']
+    formattedDataFrame = pd.DataFrame(columns=formattedColumns)
+    descriptions = courseTable['Faculty / Schedule'].values
+    for i in range(len(courseTable)):
+        # Read all the values from the original dataframe
+        courseCode = courseTable.iloc[i]['Course Code']
+        name = courseTable.iloc[i]['Name']
+        req = courseTable.iloc[i]['Req']
+        numCredits = courseTable.iloc[i]['Credits']
+        begin_date = datetime.strptime(courseTable.iloc[0]['Begin Date'], '%m/%d/%Y')
+        end_date = datetime.strptime(courseTable.iloc[0]['End Date'], '%m/%d/%Y')
+        
+        listOfCourses = getCourseTimes(descriptions[i])
+        for j in range(len(listOfCourses)):
+            counter+=1
+            instructor, days, startTime, endTime, location = listOfCourses[j]
+            if days is not None:
+                M,T,W,R,F = days
+            else:
+                M,T,W,R,F = 0,0,0,0,0
+            newRow = pd.Series([courseCode, name, req, numCredits, begin_date, end_date, instructor, M, T, W, R, F, startTime, endTime, location], index=formattedColumns)
+            print(newRow)
+            formattedDataFrame.loc[counter] = newRow
 
+    formattedDataFrame.to_csv("formattedCourses.csv")
 
 # %%
  
