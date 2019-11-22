@@ -21,9 +21,9 @@ def getAllCourses():
     courseTable = pd.read_csv(filePath).values
     return courseTable
 #%%
-def getCourseTimes(text):
+def getCourseInfo(text):
     '''
-    Parses the description from the 'Faculty / Schedule' column of the csv from my.olin.edu add/drop
+    Parses the description the 'Faculty / Schedule' column of the csv from my.olin.edu add/drop
     and creates a dataframe with the correct columns
     text: String, the text you want to parse. 
     '''
@@ -38,7 +38,7 @@ def getCourseTimes(text):
     for line in eachLine:
         
         # Parse the text to get usefull information
-        timeRegexPat = "([a-zA-Z]+)\s(\d{2}):(\d{2})-(\d{2}):(\d{2})([A-Z]{2})"
+        
         instructorRegexPat = "(.*?)(?=\/)"
 
         instructorRegexPatAM = "(.*?) / ([a-zA-Z]+) (\d{2}:\d{2}[a-zA-Z]+)-(\d{2}:\d{2}[a-zA-Z]+); (.*)"
@@ -140,7 +140,7 @@ def formatCourses():
         begin_date = datetime.strptime(courseTable.iloc[0]['Begin Date'], '%m/%d/%Y')
         end_date = datetime.strptime(courseTable.iloc[0]['End Date'], '%m/%d/%Y')
         
-        listOfCourses = getCourseTimes(descriptions[i])
+        listOfCourses = getCourseInfo(descriptions[i])
         for j in range(len(listOfCourses)):
             counter+=1
             instructor, days, startTime, endTime, location = listOfCourses[j]
