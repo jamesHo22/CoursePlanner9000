@@ -69,9 +69,9 @@ def getCourseTimes(text):
     pass
 #%%
 
-descriptions = courseTable['Faculty / Schedule'].values
-for i in range(3):
-    getCourseTimes(descriptions[i])
+# descriptions = courseTable['Faculty / Schedule'].values
+# for i in range(3):
+#     getCourseTimes(descriptions[i])
     
 #%%
 
