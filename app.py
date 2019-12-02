@@ -11,12 +11,6 @@ image_folder = os.path.join('static', 'image_folder')
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = image_folder
 
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
-
 @app.route('/')
 def home():
     # Allows me to display the logo onto the home page
