@@ -11,6 +11,7 @@ def home():
 @app.route('/course_dir/')
 def course_dir():
     courses = cp.getAllCourses()
+    # Make a dictionary containing all 
     return render_template('course_dir.html', courses = courses)
 
 @app.route('/roadmap/')
