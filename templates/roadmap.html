@@ -6,6 +6,8 @@
 
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
 <title>Course Planner 9000</title>
 
 <style>
@@ -40,9 +42,10 @@
         font-size: 18px;
         width: 130px;
         padding: 10px;
+        background-color: #ccc;
     }
     .roadmap td:hover {
-        background-color: #0099ff;
+        background-color: #ffdf86;
     }
     
 
@@ -54,7 +57,7 @@
     /* margin: auto; */
     position: absolute;
     padding-top: 88px;
-    top: -44px;
+    top: -65px;
     right: 80px;
     }
 
@@ -62,7 +65,8 @@
     /* width: 504px; */
     font-size: 18px;
     border-spacing: 0;
-    margin-right: 100px;
+    margin-right: 90px;
+    margin-top: 60px;
     padding: 50px;
     }
 
@@ -82,7 +86,7 @@
     border: 1px solid #d3d3d3;
     } */
 
-    .search-container {
+    /* .search-container {
       float: right;
     }
 
@@ -123,20 +127,34 @@
       input[type=text] {
         border: 1px solid #ccc;  
       }
+    } */
+
+    #main {
+      width: 2000px;
+      margin: 0 auto;
+    }
+    
+    #year1 {
+      float: left;
+      width: 200px;
+      height: 400px;
+      background: red;
+      float: left;
+    }
+
+    #year2 {
+      margin-left: 500px;
+      width: 600px;
+      background: rgb(29, 192, 43);
+      height: 400px;
+      margin-left: 200px;
     }
 
 
+    
 </style> 
-
-
 </head>
 
-<body>
-
-<h1>Roadmap: A semesterly course scheduler</h1>
-<p></p>
-
-</body>
 
 <!-- <div class="search-container">
   <form action="/action_page.php">
@@ -165,11 +183,79 @@
   </table>
 </div> 
 
-
-
-
-<!-- Roadmap -->
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+
+
+<!-- Roadmap V2 -->
+<div id="main">
+  <div id="year1" class="roadmap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sem1</th>
+          <th>Sem2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DesNat</td>
+          <td>QEA 1</td>
+        </tr>
+        <tr>
+          <td>ModSim</td>
+          <td>P&M</td>
+        </tr>
+        <tr>
+          <td>ISIM</td>
+          <td>SoftDes</td>
+        </tr>
+        <tr>
+          <td>Digital Eye</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>OFYI</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div id="year2" class="roadmap" >
+      <table>
+        <thead>
+          <tr>
+            <th>Sem3</th>
+            <th>Sem4</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>QEA 3</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td>AstroStats</td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td> </td>
+            <td> </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+</div>
+<!-- 
+Roadmap
 <div class="roadmap">
   <table>
     <thead>
@@ -233,11 +319,11 @@
             <td> </td>
             <td> </td>
             <td> </td>
-            <td> </td>
+            <td><span id=result></span></td>
         </tr>
     </tbody>
   </table>
-</div>
+</div> -->
 
 <!-- 
     
@@ -253,8 +339,6 @@
     <div id="mydivheader">Class Two</div>
 
 </div> -->
-
-
 
 <!-- JAVASCRIPT -->
 
@@ -310,8 +394,28 @@
 
 </script>
 
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 
-
+<script type=text/javascript>
+  $(function() {
+    $('a#calculate').bind('click', function() {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
+        a: $('input[name="a"]').val(),
+        b: $('input[name="b"]').val()
+      }, function(data) {
+        $("#result").text(data.result);
+      });
+      return false;
+    });
+  });
+</script>
+<h1>jQuery Example</h1>
+<p><input type=text size=5 name=a> +
+   <input type=text size=5 name=b> =
+   <!-- <span id=result>?</span> -->
+<p><a href=# id=calculate>calculate server side</a>
 
 
 
