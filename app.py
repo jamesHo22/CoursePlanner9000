@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify, render_template, request
 from flask import render_template
 import courseProcessing as cp
 import os
@@ -8,6 +8,12 @@ image_folder = os.path.join('static', 'image_folder')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = image_folder
+
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
 
 @app.route('/')
 def home():
