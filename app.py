@@ -1,5 +1,7 @@
 from flask import Flask, jsonify, render_template, request
 from flask import render_template
+from flask import jsonify
+from flask import request
 import courseProcessing as cp
 import os
 
@@ -8,12 +10,6 @@ image_folder = os.path.join('static', 'image_folder')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = image_folder
-
-@app.route('/_add_numbers')
-def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
 
 @app.route('/')
 def home():
@@ -31,6 +27,13 @@ def course_dir():
 def roadmap():
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
     return render_template('roadmap.html', logo = full_filename)
+
+# Test method for requesting data
+@app.route('/_add_numbers')
+def add_numbers():
+    a = request.args.get('a', 0, type=int)
+    b = request.args.get('b', 0, type=int)
+    return jsonify(result=a + b)
 
 if __name__ == '__main__':
     app.run(debug=True)

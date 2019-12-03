@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
 <!--Inherits site navigation from layout.html -->
 {% extends "layout.html" %}
 {% block content %}
