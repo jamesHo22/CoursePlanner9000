@@ -37,7 +37,7 @@ def add_numbers():
 
 # Link to documentation page
 @app.route('/documentation')
-def project_documentation():
+def documentation():
     return render_template('Documentation.html')
 
 if __name__ == '__main__':
