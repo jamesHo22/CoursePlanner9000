@@ -17,7 +17,7 @@ def checkRequiredCourses(requiredCourses, currentCourses):
 
 def getAllCourses():
     cwd = Path.cwd()
-    filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
+    filePath = Path(cwd / 'formattedCourses.csv')
     courseTable = pd.read_csv(filePath).values
     return courseTable
 #%%

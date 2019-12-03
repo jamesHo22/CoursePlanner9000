@@ -35,5 +35,16 @@ def add_numbers():
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
 
+@app.route('/_getAllCurrentCourses')
+def getCurrentCourses():
+    '''Returns json of all the courses'''
+    pass
+
+@app.route('/_addCourseById')
+def addCourseById():
+    '''Looks at request and adds the course ID to a list'''
+    pass
+
+
 if __name__ == '__main__':
     app.run(debug=True)
