@@ -1,7 +1,8 @@
 // This JS code is used in home.html 
 $(function() {
   // bind a button to the calculate tag
-  $('a#calculate').bind('click', addNumbers());
+  console.log("Link pressed")
+  $('a#calculate').bind('click', function() {addNumbers()});
 });
 
 function addNumbers() {
@@ -9,7 +10,9 @@ function addNumbers() {
   // Once the data arrived, it will call the given function with the return value as argument. 
   // Note that we can use the $SCRIPT_ROOT variable here that we set earlier.
   console.log("addNumbers called");
-  $.getJSON($SCRIPT_ROOT + '/_add_numbers', {a: $('input[name="a"]').val(), b: $('input[name="b"]').val()}, elementSetText($("#result"), data.result));  
+  $.getJSON($SCRIPT_ROOT + '/_add_numbers', {a: $('input[name="a"]').val(), b: $('input[name="b"]').val()}, function(data) {
+    elementSetText($("#result"), data.result)
+  });  
   return false;
 };
 
@@ -17,7 +20,8 @@ function addNumbers() {
  * @param elementID a jQuery selector
  * @param {String} text the text you want to set the element to
  */
-function elementSetText(elementID, text) {
+function elementSetText(jQueryelementID, text) {
   // this function takes an elementID and changes its text to whatever is passed into it
-  elementID.text(text);
+  jQueryelementID.text(text);
+  
 };

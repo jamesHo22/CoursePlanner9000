@@ -33,7 +33,7 @@ def roadmap():
 def add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
+    return jsonify(result=a * b)
 
 @app.route('/_getAllCurrentCourses')
 def getCurrentCourses():

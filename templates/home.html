@@ -2,6 +2,8 @@
 <html>
 <!-- Import jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Referrence the home.js file -->
+<script type=text/javascript src="{{url_for('static', filename='js/home.js')}}"></script>
 <script type=text/javascript>
     $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
@@ -29,14 +31,11 @@
 <img src="{{ logo }}" class="rounded mx-auto d-block" alt="logo"  width=683 height=178>
 </body>
 
-<!-- Referrence the home.js file -->
-<script type=text/javascript src="{{
-  url_for('static', filename='js/main.js')}}">
-</script>
+
 
 <!-- Example to perform a calculation on the server side -->
 <h1>jQuery Example</h1>
-<p><input type=text size=5 name=a> +
+<p><input type=text size=5 name=a> *
    <input type=text size=5 name=b> =
    <span id=result>?</span>
 <p><a href=# id=calculate>calculate server side</a>
