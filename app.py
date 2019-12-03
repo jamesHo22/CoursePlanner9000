@@ -35,5 +35,10 @@ def add_numbers():
     b = request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
 
+# Link to documentation page
+@app.route('/documentation')
+def project_documentation():
+    return render_template('Documentation.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
