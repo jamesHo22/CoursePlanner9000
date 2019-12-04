@@ -12,6 +12,7 @@ function addNumbers() {
   console.log("addNumbers called");
   $.getJSON($SCRIPT_ROOT + '/_add_numbers', {a: $('input[name="a"]').val(), b: $('input[name="b"]').val()}, function(data) {
     elementSetText($("#result"), data.result)
+    updateCourseList()
   });  
   return false;
 };
@@ -24,4 +25,9 @@ function elementSetText(jQueryelementID, text) {
   // this function takes an elementID and changes its text to whatever is passed into it
   jQueryelementID.text(text);
   
+};
+
+function updateCourseList() {
+  $.getJSON($SCRIPT_ROOT + '/_update_course_list', {a: "Hello"});
+  return false;
 };

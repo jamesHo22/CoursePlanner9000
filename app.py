@@ -45,6 +45,14 @@ def addCourseById():
     '''Looks at request and adds the course ID to a list'''
     pass
 
+@app.route('/_update_course_list')
+def updateCourseList():
+    '''Looks at request and adds the course ID to a list'''
+    testMessage = request.args.to_dict()
+    print(testMessage.keys())
+    print(testMessage)
+    return jsonify(result=testMessage)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
