@@ -48,10 +48,15 @@ def addCourseById():
 @app.route('/_update_course_list')
 def updateCourseList():
     '''Looks at request and adds the course ID to a list'''
-    testMessage = request.args.to_dict()
-    print(testMessage.keys())
-    print(testMessage)
-    return jsonify(result=testMessage)
+    queryParamsDict = request.args.to_dict()
+    print(queryParamsDict)
+    filtGenGradReq = queryParamsDict['filtGenGradReq']
+    filtMonday = queryParamsDict['filtMonday']
+    filtTuesday = queryParamsDict['filtTuesday']
+    filtWednesday = queryParamsDict['filtWednesday']
+    filtThursday = queryParamsDict['filtThursday']
+    filtFriday = queryParamsDict['filtFriday']
+    return jsonify(result=queryParamsDict)
 
 
 if __name__ == '__main__':

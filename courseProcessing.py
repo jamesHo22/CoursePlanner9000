@@ -155,7 +155,11 @@ def formatCourses():
     formattedDataFrame.to_csv("formattedCourses.csv")
 
 # %%
- 
+def filterCourses():
+    '''
+    This function will take in some query parameters and filter the formatted courses
+    returns: dictionary of all the courses and their information
+    ''' 
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 
