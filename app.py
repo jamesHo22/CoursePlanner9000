@@ -3,6 +3,7 @@ from flask import render_template
 from flask import jsonify
 from flask import request
 import courseProcessing as cp
+import pandas as pd
 import os
 
 # Added a static folder where we can upload pictures
