@@ -59,5 +59,11 @@ def updateCourseList():
     return jsonify(result=queryParamsDict)
 
 
+# Link to documentation page
+@app.route('/documentation')
+def documentation():
+    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Untitled.png')
+    return render_template('Documentation.html', diagram = full_filename)
+
 if __name__ == '__main__':
     app.run(debug=True)
