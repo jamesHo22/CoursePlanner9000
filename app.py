@@ -50,7 +50,6 @@ def addCourseById():
 def updateCourseList():
     '''Looks at request and adds the course ID to a list'''
     queryParamsDict = request.args.to_dict()
-    print(queryParamsDict)
     filtGenGradReq = queryParamsDict['filtGenGradReq']
     filtMonday = queryParamsDict['M']
     filtTuesday = queryParamsDict['T']
@@ -60,8 +59,12 @@ def updateCourseList():
     
     # Build the query list
     queryList = []
-    
-    cp.filterCourses(["R", "M"])
+    for i, v in queryParamsDict.items():
+        if v == 'true':
+            queryList.append(i)
+        
+    cp.filterCourses(queryList)
+    print(queryList)
     return jsonify(result=queryParamsDict)
 
 
