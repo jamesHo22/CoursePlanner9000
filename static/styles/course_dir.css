@@ -1,12 +1,12 @@
 /* Style Sheet for Course Directory Page */
 
 #filterholder {
-    position: absolute;
-    left: 35px;
-    top: 165px;
+    position: relative;
+    left: -400px;
+    top: 100px;
 }
 #table {
-    position: absolute;
-    right: 275px;
-    top: 100px;
+    position: relative;
+    right: 0px;
+    top: -165px;
 }
