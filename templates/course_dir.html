@@ -16,6 +16,12 @@
 <!-- Bootstrap CSS  -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" type = "text/css" href = "{{url_for('static', filename = 'styles/course_dir.css')}}">
+<!-- <style>
+#filterholder { position: absolute; left: 35px; top: 165px; }
+#table { position: absolute; right: 275px; top: 100px; }
+</style> -->
+
 <!-- Include JQuery -->
 
 <title>Course Planner 9000</title>
@@ -24,21 +30,30 @@
 <body>
 
   <!-- Side navigation -->
-<div class="filter" id="filterDiv">
-  <!-- When using the filter class, you must specify the value attribute. 
-  This value attribute will be used as a key to which box was checked -->
-  <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
-  <input id="filt_monday" type="checkbox" value="filtMonday"> Monday<br>
-  <input id="filt_tuesday" type="checkbox" value="filtTuesday"> Tuesday<br>
-  <input id="filt_wednesday" type="checkbox" value="filtWednesday"> Wednesday<br>
-  <input id="filt_thursday" type="checkbox" value="filtThursday"> Thursday<br>
-  <input id="filt_friday" type="checkbox" value="filtFriday"> Friday<br>
+
+<div class="w3-container" id = "filterholder">
+  <b>Course Filter</b>
+  <div class="w3-card-4" style="width:110%;">
+    <div class="w3-container" style="padding: 0.75em 0 0.5em 0.75em;">
+      <div class="filter" id="filterDiv">
+        <!-- When using the filter class, you must specify the value attribute.
+        This value attribute will be used as a key to which box was checked -->
+        <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
+        <input id="filt_monday" type="checkbox" value="filtMonday"> Monday<br>
+        <input id="filt_tuesday" type="checkbox" value="filtTuesday"> Tuesday<br>
+        <input id="filt_wednesday" type="checkbox" value="filtWednesday"> Wednesday<br>
+        <input id="filt_thursday" type="checkbox" value="filtThursday"> Thursday<br>
+        <input id="filt_friday" type="checkbox" value="filtFriday"> Friday<br>
+      </div>
+  </div>
+</div>
 </div>
 
-<h1>Olin Course Directory</h1>
-
 <!-- Course HTML Table  -->
-<table style="width:100%">
+<div class = "container" id = "table">
+
+<h1>Olin Course Directory</h1>
+<table style="width:100%" >
   <!-- Table Header Row -->
   <tr>
     <th>Course Title</th>
@@ -50,25 +65,6 @@
 <!-- This is how you iterate over a list in HTML -->
 <!-- Adding code in HTML is called Jinja2 -->
 <!-- Collapsible Courses -->
-
-<div class="w3-container">
-  <h2>Card Content</h2>
-  <p>Add containers inside the card to create different sections:</p>
-
-  <div class="w3-card-4" style="width:50%;">
-    <header class="w3-container w3-blue">
-      <h1>Header</h1>
-    </header>
-
-    <div class="w3-container">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-
-    <footer class="w3-container w3-blue">
-      <h5>Footer</h5>
-    </footer>
-  </div>
-</div>
 
   {% for item in courses %}
   <div class="accordion" id="accordionExample{{loop.index}}">
@@ -92,7 +88,7 @@
   <!-- <br></br> -->
   {% endfor %}
 </div>
-
+</div>
 
 <!-- JavaScript Support Scripts  -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

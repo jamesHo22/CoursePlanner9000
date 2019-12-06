@@ -1,0 +1,12 @@
+/* Style Sheet for Course Directory Page */
+
+#filterholder {
+    position: absolute;
+    left: 35px;
+    top: 165px;
+}
+#table {
+    position: absolute;
+    right: 275px;
+    top: 100px;
+}
