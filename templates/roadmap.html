@@ -14,17 +14,17 @@
 
     /* ROADMAP TABLE  */
 
-    .roadmap {
+    /* .roadmap {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    /* width: 520px; */
+    width: 520px;
     margin: auto;
     position: relative;
     padding-top: 88px;
     top: -44px;
     width: 100%;
     text-align: center;
-    }
+    } */
 
     .roadmap table{
       border-collapse: separate;
@@ -72,7 +72,7 @@
 
     .credits td {
         text-align: right;
-        padding-right: 20px;
+        padding-right: 10px;
     }
 
     /* 
@@ -129,28 +129,10 @@
       }
     } */
 
-    #main {
-      width: 2000px;
-      margin: 0 auto;
-    }
-    
-    #year1 {
-      float: left;
-      width: 200px;
-      height: 400px;
-      background: red;
+
+    table{
       float: left;
     }
-
-    #year2 {
-      margin-left: 500px;
-      width: 600px;
-      background: rgb(29, 192, 43);
-      height: 400px;
-      margin-left: 200px;
-    }
-
-
     
 </style> 
 </head>
@@ -169,15 +151,15 @@
     <tbody>
       <tr>
         <td>Credits left</td>
-        <td>5</td>          
+        <td><span id=result>0</span></td>          
       </tr>
       <tr>
         <td>AHS Credits</td>
-        <td>5</td>          
+        <td>0</td>          
       </tr>
       <tr>
         <td>Other Requirements</td>
-        <td>5</td>          
+        <td>0</td>          
       </tr>
     </tbody>
   </table>
@@ -187,73 +169,106 @@
 
 
 <!-- Roadmap V2 -->
-<div id="main">
-  <div id="year1" class="roadmap">
-    <table>
-      <thead>
-        <tr>
-          <th>Sem1</th>
-          <th>Sem2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>DesNat</td>
-          <td>QEA 1</td>
-        </tr>
-        <tr>
-          <td>ModSim</td>
-          <td>P&M</td>
-        </tr>
-        <tr>
-          <td>ISIM</td>
-          <td>SoftDes</td>
-        </tr>
-        <tr>
-          <td>Digital Eye</td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>OFYI</td>
-          <td> </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div id="year2" class="roadmap" >
-      <table>
-        <thead>
-          <tr>
-            <th>Sem3</th>
-            <th>Sem4</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>QEA 3</td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td>AstroStats</td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-          </tr>
-          <tr>
-            <td> </td>
-            <td> </td>
-          </tr>
-        </tbody>
-      </table>
-  </div>
+<div class="roadmap">
+  <table>
+    <thead>
+      <tr>
+        <th>Sem1</th>
+        <th>Sem2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>DesNat</td>
+        <td>QEA 1</td>
+      </tr>
+      <tr>
+        <td>ModSim</td>
+        <td>P&M</td>
+      </tr>
+      <tr>
+        <td>ISIM</td>
+        <td>SoftDes</td>
+      </tr>
+      <tr>
+        <td>Digital Eye</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>OFYI</td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
 
 </div>
+
+<div class="roadmap">
+  <table>
+    <thead>
+      <tr>
+        <th>Sem3</th>
+        <th>Sem4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>QEA 3</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>AstroStats</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="roadmap">
+  <table>
+    <thead>
+      <tr>
+        <th>Sem5</th>
+        <th>Sem6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>UOCD</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>ESA</td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <!-- 
 Roadmap
 <div class="roadmap">
