@@ -52,11 +52,16 @@ def updateCourseList():
     queryParamsDict = request.args.to_dict()
     print(queryParamsDict)
     filtGenGradReq = queryParamsDict['filtGenGradReq']
-    filtMonday = queryParamsDict['filtMonday']
-    filtTuesday = queryParamsDict['filtTuesday']
-    filtWednesday = queryParamsDict['filtWednesday']
-    filtThursday = queryParamsDict['filtThursday']
-    filtFriday = queryParamsDict['filtFriday']
+    filtMonday = queryParamsDict['M']
+    filtTuesday = queryParamsDict['T']
+    filtWednesday = queryParamsDict['W']
+    filtThursday = queryParamsDict['R']
+    filtFriday = queryParamsDict['F']
+    
+    # Build the query list
+    queryList = []
+    
+    cp.filterCourses(["R", "M"])
     return jsonify(result=queryParamsDict)
 
 

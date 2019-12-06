@@ -180,7 +180,7 @@ def filterCourses(filters):
     dfQuery = finalString.join(queryString)
     return allCoursesDF.query(dfQuery, inplace=False)
 # %%
-filterCourses(["R", "M"])
+
 # %%
 # TODO:
 # Make a SQL database with these columns
