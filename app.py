@@ -20,7 +20,7 @@ def home():
 
 @app.route('/course_dir/')
 def course_dir():
-    courses = cp.getAllCourses()
+    courses = cp.getAllCourses().values
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
     return render_template('course_dir.html', courses = courses, logo = full_filename)
 
@@ -63,9 +63,8 @@ def updateCourseList():
         if v == 'true':
             queryList.append(i)
         
-    cp.filterCourses(queryList)
-    print(queryList)
-    return jsonify(result=queryParamsDict)
+    updatedCourses = cp.filterCourses(queryList).to_json(orient='index')
+    return jsonify(result=updatedCourses)
 
 
 # Link to documentation page
