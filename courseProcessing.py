@@ -18,7 +18,7 @@ def checkRequiredCourses(requiredCourses, currentCourses):
 def getAllCourses():
     cwd = Path.cwd()
     filePath = Path(cwd / 'formattedCourses.csv')
-    courseTable = pd.read_csv(filePath).values
+    courseTable = pd.read_csv(filePath)
     return courseTable
 #%%
 def getCourseInfo(text):
@@ -155,11 +155,33 @@ def formatCourses():
     formattedDataFrame.to_csv("formattedCourses.csv")
 
 # %%
-def filterCourses():
+def filterCourses(filters):
     '''
     This function will take in some query parameters and filter the formatted courses
-    returns: dictionary of all the courses and their information
+
+    :param filters: a list containing the columns to perform an AND query on
+    :returns: dictionary of all the filtered courses and their information
     ''' 
+    allCoursesDF = getAllCourses()
+    queryString = []
+    finalString = ''
+    if len(filters) > 1:
+        for i,v in enumerate(filters):
+            if i == len(filters)-1:
+                query = f"{str(v)} == True"
+                queryString.append(query)
+            else:
+                query = f"{str(v)} == True and "
+                queryString.append(query)
+    else:
+        query = f"{str(filters[0])} == True"
+        queryString.append(query)
+
+    dfQuery = finalString.join(queryString)
+    return allCoursesDF.query(dfQuery, inplace=False)
+# %%
+filterCourses(["R", "M"])
+# %%
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 
@@ -190,3 +212,9 @@ def filterCourses():
 
 
 
+
+
+
+
+
+# %%
