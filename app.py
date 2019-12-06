@@ -33,7 +33,31 @@ def roadmap():
 def add_numbers():
     a = request.args.get('a', 0, type=int)
     b = request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
+    return jsonify(result=a * b)
+
+@app.route('/_getAllCurrentCourses')
+def getCurrentCourses():
+    '''Returns json of all the courses'''
+    pass
+
+@app.route('/_addCourseById')
+def addCourseById():
+    '''Looks at request and adds the course ID to a list'''
+    pass
+
+@app.route('/_update_course_list')
+def updateCourseList():
+    '''Looks at request and adds the course ID to a list'''
+    queryParamsDict = request.args.to_dict()
+    print(queryParamsDict)
+    filtGenGradReq = queryParamsDict['filtGenGradReq']
+    filtMonday = queryParamsDict['filtMonday']
+    filtTuesday = queryParamsDict['filtTuesday']
+    filtWednesday = queryParamsDict['filtWednesday']
+    filtThursday = queryParamsDict['filtThursday']
+    filtFriday = queryParamsDict['filtFriday']
+    return jsonify(result=queryParamsDict)
+
 
 # Link to documentation page
 @app.route('/documentation')

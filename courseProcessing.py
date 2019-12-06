@@ -17,7 +17,7 @@ def checkRequiredCourses(requiredCourses, currentCourses):
 
 def getAllCourses():
     cwd = Path.cwd()
-    filePath = Path(cwd / 'courseData/LIVE_Course_Catalog_Extract_UG19_20190722_for_SC.csv')
+    filePath = Path(cwd / 'formattedCourses.csv')
     courseTable = pd.read_csv(filePath).values
     return courseTable
 #%%
@@ -155,7 +155,11 @@ def formatCourses():
     formattedDataFrame.to_csv("formattedCourses.csv")
 
 # %%
- 
+def filterCourses():
+    '''
+    This function will take in some query parameters and filter the formatted courses
+    returns: dictionary of all the courses and their information
+    ''' 
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 
