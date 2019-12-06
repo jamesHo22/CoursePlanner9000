@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html>
+<!-- Import jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Referrence the home.js file -->
+<script type=text/javascript src="{{url_for('static', filename='js/home.js')}}"></script>
+<script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+
 <!--Inherits site navigation from layout.html -->
 {% extends "layout.html" %}
 {% block content %}
@@ -9,15 +17,20 @@
 <title>Course Planner 9000</title>
 </head>
 
+<!-- If anyone can help me find a better way to center this picture vertically  -->
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+
+
+<!-- Logo  -->
 <body>
-
-<h1>This is the Home page</h1>
-<p>This is a paragraph.</p>
-
+<img src="{{ logo }}" class="rounded mx-auto d-block" alt="logo"  width=683 height=178>
 </body>
-<div class="alert alert-primary" role="alert">
-            A simple primary alert—check it out!
-</div>
+
 </html>
 
 <!--Endtag for site navigation-->
