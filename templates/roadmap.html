@@ -5,31 +5,34 @@
 {% block content %}
 
 <head>
+<link rel="stylesheet" href="{{ url_for('static', filename='../static/css/roadmap.css') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <title>Course Planner 9000</title>
 
-<style>
+<!-- <style>
 
     /* ROADMAP TABLE  */
 
-    /* .roadmap {
+    .roadmap {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     width: 520px;
-    margin: auto;
-    position: relative;
-    padding-top: 88px;
+    /* margin: auto; */
+    /* position: relative; */
+    /* padding-top: 88px; */
     top: -44px;
     width: 100%;
     text-align: center;
-    } */
+    }
 
     .roadmap table{
       border-collapse: separate;
       border-spacing: 20px;
-      border: darkblue;
+      /* border: darkblue; */
+      float: left;
+
     }
 
     .roadmap th {
@@ -41,8 +44,9 @@
     .roadmap td {
         font-size: 18px;
         width: 130px;
+        height: 50px;
         padding: 10px;
-        background-color: #ccc;
+        background-color: rgb(235, 235, 235);
     }
     .roadmap td:hover {
         background-color: #ffdf86;
@@ -73,6 +77,10 @@
     .credits td {
         text-align: right;
         padding-right: 10px;
+    }
+
+    #main {
+      margin-left: 200px;
     }
 
     /* 
@@ -129,12 +137,10 @@
       }
     } */
 
-
-    table{
-      float: left;
-    }
     
-</style> 
+</style>  -->
+
+
 </head>
 
 
@@ -169,108 +175,141 @@
 
 
 <!-- Roadmap V2 -->
-<div class="roadmap">
-  <table>
-    <thead>
-      <tr>
-        <th>Sem1</th>
-        <th>Sem2</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>DesNat</td>
-        <td>QEA 1</td>
-      </tr>
-      <tr>
-        <td>ModSim</td>
-        <td>P&M</td>
-      </tr>
-      <tr>
-        <td>ISIM</td>
-        <td>SoftDes</td>
-      </tr>
-      <tr>
-        <td>Digital Eye</td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>OFYI</td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
+<div id="main">
+  <div class="roadmap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sem1</th>
+          <th>Sem2</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>DesNat</td>
+          <td>QEA 1</td>
+        </tr>
+        <tr>
+          <td>ModSim</td>
+          <td>P&M</td>
+        </tr>
+        <tr>
+          <td>ISIM</td>
+          <td>SoftDes</td>
+        </tr>
+        <tr>
+          <td>Digital Eye</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>OFYI</td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
 
+  </div>
+
+  <div class="roadmap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sem3</th>
+          <th>Sem4</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>QEA 3</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>AstroStats</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="roadmap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sem5</th>
+          <th>Sem6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>UOCD</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td>ESA</td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="roadmap">
+    <table>
+      <thead>
+        <tr>
+          <th>Sem7</th>
+          <th>Sem8</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Elecanisms</td>
+          <td>SCOPE</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<div class="roadmap">
-  <table>
-    <thead>
-      <tr>
-        <th>Sem3</th>
-        <th>Sem4</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>QEA 3</td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>AstroStats</td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div class="roadmap">
-  <table>
-    <thead>
-      <tr>
-        <th>Sem5</th>
-        <th>Sem6</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>UOCD</td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td>ESA</td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-      <tr>
-        <td> </td>
-        <td> </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<!-- 
-Roadmap
+<!-- Old Roadmap
 <div class="roadmap">
   <table>
     <thead>
@@ -340,9 +379,7 @@ Roadmap
   </table>
 </div> -->
 
-<!-- 
-    
-    CLICK AND DRAG ITEMS
+<!-- CLICK AND DRAG ITEMS
     
     
     <div id="mydiv">
@@ -355,9 +392,7 @@ Roadmap
 
 </div> -->
 
-<!-- JAVASCRIPT -->
-
-<script>
+<!-- <script>
 
 // CLICK AND DRAG
 
@@ -407,13 +442,13 @@ Roadmap
     // }
 
 
-</script>
+</script> -->
 
 <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
 
-<script type=text/javascript>
+<!-- <script type=text/javascript>
   $(function() {
     $('a#calculate').bind('click', function() {
       $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
@@ -426,14 +461,13 @@ Roadmap
     });
   });
 </script>
+
+
 <h1>jQuery Example</h1>
 <p><input type=text size=5 name=a> +
    <input type=text size=5 name=b> =
-   <!-- <span id=result>?</span> -->
-<p><a href=# id=calculate>calculate server side</a>
-
-
-
+   <span id=result>?</span>
+<p><a href=# id=calculate>calculate server side</a> -->
 
 
 </html>
