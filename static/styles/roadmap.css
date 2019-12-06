@@ -5,28 +5,23 @@
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
     width: 520px;
-    /* margin: auto; */
-    /* position: relative; */
-    /* padding-top: 88px; */
     top: -44px;
     width: 100%;
     text-align: center;
-    }
+ }
 
 .roadmap table{
     border-collapse: separate;
     border-spacing: 20px;
-    /* border: darkblue; */
     float: left;
-
 }
 
 .roadmap th {
     font-size: 32px;
     font-weight: 700;   
     border-width: 1px;
-
 }
+
 .roadmap td {
     font-size: 18px;
     width: 130px;
@@ -34,29 +29,25 @@
     padding: 10px;
     background-color: rgb(235, 235, 235);
 }
-.roadmap td:hover {
-    background-color: #ffdf86;
-}
 
+.roadmap td:hover {
+    background-color: rgb(255, 196, 4);
+}
 
 /* CREDITS TABLE  */
 
 .credits {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 400;
-    /* margin: auto; */
     position: absolute;
     padding-top: 88px;
-    top: -65px;
-    right: 80px;
+    top: 0px;
+    right: 8%;
 }
 
 .credits table {
-    /* width: 504px; */
     font-size: 18px;
     border-spacing: 0;
-    margin-right: 90px;
-    margin-top: 60px;
     padding: 50px;
 }
 
