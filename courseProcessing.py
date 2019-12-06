@@ -181,7 +181,7 @@ def filterCourses(filters):
         dfQuery = finalString.join(queryString)
         return allCoursesDF.query(dfQuery, inplace=False)
     else:
-        pass
+        return getAllCourses()
 # %%
 
 # %%
