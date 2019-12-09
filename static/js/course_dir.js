@@ -30,6 +30,7 @@ function populate(jsonCourseList) {
                                 ${courseCode} --- ${courseName}
                             </button>
                         </h2>
+                        <p>Instructor: ${instructor}</p>
                     </div>
 
                     <div id="collapse${key}" class="collapse" aria-labelledby="heading${key}" data-parent="#accordionExample${key}">
