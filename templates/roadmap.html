@@ -5,141 +5,11 @@
 {% block content %}
 
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='../static/css/roadmap.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='../static/styles/roadmap.css') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 <title>Course Planner 9000</title>
-
-<!-- <style>
-
-    /* ROADMAP TABLE  */
-
-    .roadmap {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    width: 520px;
-    /* margin: auto; */
-    /* position: relative; */
-    /* padding-top: 88px; */
-    top: -44px;
-    width: 100%;
-    text-align: center;
-    }
-
-    .roadmap table{
-      border-collapse: separate;
-      border-spacing: 20px;
-      /* border: darkblue; */
-      float: left;
-
-    }
-
-    .roadmap th {
-        font-size: 32px;
-        font-weight: 700;   
-        border-width: 1px;
- 
-    }
-    .roadmap td {
-        font-size: 18px;
-        width: 130px;
-        height: 50px;
-        padding: 10px;
-        background-color: rgb(235, 235, 235);
-    }
-    .roadmap td:hover {
-        background-color: #ffdf86;
-    }
-    
-
-    /* CREDITS TABLE  */
-
-    .credits {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 400;
-    /* margin: auto; */
-    position: absolute;
-    padding-top: 88px;
-    top: -65px;
-    right: 80px;
-    }
-
-    .credits table {
-    /* width: 504px; */
-    font-size: 18px;
-    border-spacing: 0;
-    margin-right: 90px;
-    margin-top: 60px;
-    padding: 50px;
-    }
-
-    .credits td {
-        text-align: right;
-        padding-right: 10px;
-    }
-
-    #main {
-      margin-left: 200px;
-    }
-
-    /* 
-    CLICK AND DRAG
-    
-    #mydiv {
-    position: absolute;
-    z-index: 9;
-    background-color: #f1f1f1;
-    text-align: center;
-    border: 1px solid #d3d3d3;
-    } */
-
-    /* .search-container {
-      float: right;
-    }
-
-    input[type=text] {
-      padding: 6px;
-      margin-top: 8px;
-      font-size: 17px;
-      border: none;
-    }
-
-    .search-container button {
-      float: right;
-      padding: 6px 10px;
-      margin-top: 8px;
-      margin-right: 16px;
-      background: #ddd;
-      font-size: 17px;
-      border: none;
-      cursor: pointer;
-    }
-
-    .search-container button:hover {
-      background: #ccc;
-    }
-
-    @media screen and (max-width: 600px) {
-      .search-container {
-        float: none;
-      }
-      a, input[type=text], .search-container button {
-        float: none;
-        display: block;
-        text-align: left;
-        width: 100%;
-        margin: 0;
-        padding: 14px;
-      }
-      input[type=text] {
-        border: 1px solid #ccc;  
-      }
-    } */
-
-    
-</style>  -->
-
 
 </head>
 
@@ -152,6 +22,7 @@
 </div> -->
 
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
+
 <div class="credits">
   <table>
     <tbody>
@@ -170,8 +41,6 @@
     </tbody>
   </table>
 </div> 
-
-<meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 
 
 <!-- Roadmap V2 -->
@@ -309,75 +178,7 @@
     </table>
   </div>
 </div>
-<!-- Old Roadmap
-<div class="roadmap">
-  <table>
-    <thead>
-      <tr>
-        <th>Sem1</td>
-        <th>Sem2</td>
-        <th>Sem1</td>
-        <th>Sem2</td>
-        <th>Sem1</td>
-        <th>Sem2</td>
-        <th>Sem1</td>
-        <th>Sem2</td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>DesNat</td>
-            <td>QEA 1</td>
-            <td>QEA 2</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td>ModSim</td>
-            <td>P&M</td>
-            <td>AstroStats</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td>ISIM</td>
-            <td>SoftDes</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td>Digital Eye</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-        </tr>
-        <tr>
-            <td>OFYI</td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td> </td>
-            <td><span id=result></span></td>
-        </tr>
-    </tbody>
-  </table>
-</div> -->
+
 
 <!-- CLICK AND DRAG ITEMS
     
