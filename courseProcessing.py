@@ -162,25 +162,28 @@ def filterCourses(filters):
     :param filters: a list containing the columns to perform an AND query on
     :returns: dictionary of all the filtered courses and their information
     ''' 
-    allCoursesDF = getAllCourses()
-    queryString = []
-    finalString = ''
-    if len(filters) > 1:
-        for i,v in enumerate(filters):
-            if i == len(filters)-1:
-                query = f"{str(v)} == True"
-                queryString.append(query)
-            else:
-                query = f"{str(v)} == True and "
-                queryString.append(query)
-    else:
-        query = f"{str(filters[0])} == True"
-        queryString.append(query)
+    if len(filters) > 0:
+        allCoursesDF = getAllCourses()
+        queryString = []
+        finalString = ''
+        if len(filters) > 1:
+            for i,v in enumerate(filters):
+                if i == len(filters)-1:
+                    query = f"{str(v)} == True"
+                    queryString.append(query)
+                else:
+                    query = f"{str(v)} == True and "
+                    queryString.append(query)
+        else:
+            query = f"{str(filters[0])} == True"
+            queryString.append(query)
 
-    dfQuery = finalString.join(queryString)
-    return allCoursesDF.query(dfQuery, inplace=False)
+        dfQuery = finalString.join(queryString)
+        return allCoursesDF.query(dfQuery, inplace=False)
+    else:
+        return getAllCourses()
 # %%
-filterCourses(["R", "M"])
+
 # %%
 # TODO:
 # Make a SQL database with these columns
