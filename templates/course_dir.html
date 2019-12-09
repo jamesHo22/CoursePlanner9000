@@ -4,10 +4,12 @@
 <!--Inherits site navigation from layout.html -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type=text/javascript src="{{url_for('static', filename='js/course_dir.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
 <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
+<script type=text/javascript src="{{url_for('static', filename='js/course_dir.js')}}"></script>
+
 
 {% extends "layout.html" %}
 {% block content %}
@@ -70,27 +72,29 @@
   </div>
 </div>
 
-  {% for item in courses %}
-  <div class="accordion" id="accordionExample{{loop.index}}">
-    <div class="card">
-      <div class="card-header" id=headingOne{{loop.index}}>
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{loop.index}}"  aria-expanded="false" aria-controls="collapse{{loop.index}}">
-            {{item[2]}}
-          </button>
-        </h2>
-      </div>
+<div id="courseList" class="accordion"></div>
 
-      <div id="collapse{{loop.index}}" class="collapse" aria-labelledby="heading{{loop.index}}" data-parent="#accordionExample{{loop.index}}">
-        <div class="card-body">
-          <strong>Course Description</strong>
-          <br></br>
-          {{item[4]}}
-        </div>
+{% for item in courses %}
+<!-- <div class="accordion" id="accordionExample{{loop.index}}">
+  <div class="card">
+    <div class="card-header" id=headingOne{{loop.index}}>
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{loop.index}}"  aria-expanded="false" aria-controls="collapse{{loop.index}}">
+          {{item[2]}}
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapse{{loop.index}}" class="collapse" aria-labelledby="heading{{loop.index}}" data-parent="#accordionExample{{loop.index}}">
+      <div class="card-body">
+        <strong>Course Description</strong>
+        <br></br>
+        {{item[4]}}
       </div>
     </div>
-  <!-- <br></br> -->
-  {% endfor %}
+  </div> -->
+<!-- <br></br> -->
+{% endfor %}
 </div>
 
 
