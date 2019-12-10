@@ -20,7 +20,7 @@ def home():
 
 @app.route('/course_dir/')
 def course_dir():
-    courses = cp.getAllCourses()
+    courses = cp.getAllCourses().values
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
     return render_template('course_dir.html', courses = courses, logo = full_filename)
 
@@ -50,21 +50,31 @@ def addCourseById():
 def updateCourseList():
     '''Looks at request and adds the course ID to a list'''
     queryParamsDict = request.args.to_dict()
-    print(queryParamsDict)
     filtGenGradReq = queryParamsDict['filtGenGradReq']
-    filtMonday = queryParamsDict['filtMonday']
-    filtTuesday = queryParamsDict['filtTuesday']
-    filtWednesday = queryParamsDict['filtWednesday']
-    filtThursday = queryParamsDict['filtThursday']
-    filtFriday = queryParamsDict['filtFriday']
-    return jsonify(result=queryParamsDict)
+    filtMonday = queryParamsDict['M']
+    filtTuesday = queryParamsDict['T']
+    filtWednesday = queryParamsDict['W']
+    filtThursday = queryParamsDict['R']
+    filtFriday = queryParamsDict['F']
+    
+    # Build the query list
+    queryList = []
+    for i, v in queryParamsDict.items():
+        if v == 'true':
+            queryList.append(i)
+        
+    updatedCourses = cp.filterCourses(queryList).to_json(orient='index')
+    return jsonify(result=updatedCourses)
 
 
 # Link to documentation page
 @app.route('/documentation')
 def documentation():
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Untitled.png')
-    return render_template('Documentation.html', diagram = full_filename)
+    full_filename_mvp = os.path.join(app.config['UPLOAD_FOLDER'], 'mvpPlan.png')
+
+    print(full_filename, full_filename_mvp)
+    return render_template('Documentation2.html', diagram = full_filename, mvp = full_filename_mvp)
 
 if __name__ == '__main__':
     app.run(debug=True)
