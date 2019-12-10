@@ -71,7 +71,8 @@ def updateCourseList():
 @app.route('/documentation')
 def documentation():
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Untitled.png')
-    return render_template('Documentation.html', diagram = full_filename)
+    full_filename_mvp = os.path.join(app.config['UPLOAD_FOLDER'], 'mvpPlan.png')
+    return render_template('Documentation2.html', diagram = full_filename, mvp = full_filename_mvp)
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,572 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documentation </title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	opacity: 0.5;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif; }
+.mono { font-family: Nitti, 'Microsoft YaHei', '微软雅黑', monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, KaiTi, STKaiTi, '华文楷体', KaiTi_GB2312, '楷体_GB2312', serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, Nitti, 'Microsoft YaHei', '微软雅黑', monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="656ea91d-fc04-4578-8c79-c02e8468f4d1" class="page sans"><header><h1 class="page-title">Documentation </h1></header><div class="page-body"><p id="9db563fd-6886-4675-92ae-438b1c99efcd" class=""><em>James Ho, Nathan Weil, Jinfay Justin Yuan </em></p><p id="cb38dded-044e-4287-b2f8-604dfd3bd03b" class=""><a href="https://github.com/jamesHo22/CoursePlanner9000">https://github.com/jamesHo22/CoursePlanner9000</a></p><h2 id="4ebe2e9a-62b0-46ac-a28b-66570a90dc77" class="">Motivation</h2><p id="7e5e50bf-54e2-41b3-a37d-bf575582a1d3" class="">At Olin, we&#x27;re all about taking education into our own hands. Part of that means building a curriculum that fits your learning goals. However, planning courses ahead of time can be difficult.</p><p id="f96b2617-7b03-40fa-8e92-888ae09b82b1" class="">Some classes are only offered in the Spring; some are held once every few semesters; others are brand new. There are also a roster of potential courses at Wellesley, Babson, and Brandeis. Keeping track of all these options while figuring out how to create a set that will allow you to graduate with a degree is not a simple feat.</p><p id="e5672537-ce1e-408a-aa3a-4ba51b2eca60" class="">In order to make student lives easier, we built this website with one goal: to create a tool for current and future Olin students to easily navigate all their options as well as provide accurate information for when desired courses could be taken along their college journey.</p><h2 id="a3be18de-b312-498c-bdb0-745b5b514ff0" class="">Project idea</h2><p id="8d2ff4a7-37ef-4721-be41-55893c1849f1" class="">Our course planner aims to streamline the already daunting process of creating a four year academic plan by gathering all the course information in one place and providing an interactive and intuitive way of planning courses, unlike searching between different websites and counting graduation credits yourself. </p><h2 id="b67667f0-e8e5-4742-ba7a-2c9aac92c9e0" class="">Visit the site!</h2><p id="b2724281-d47a-4891-9462-dde77e8c4639" class=""><a href="https://whispering-fortress-39187.herokuapp.com/">https://whispering-fortress-39187.herokuapp.com/</a></p><p id="cbf3a656-ffab-4a98-893b-1223e491c354" class="">Still in development!</p><h2 id="bc3cc869-46b8-4f0e-8122-969630847882" class="">How we built it</h2><p id="6dae756a-94cb-4752-b0cb-dd88cd555b98" class="">We identified key problems with the current course planning workflow throughout our own experiences and surveys.<div class="indented"><ul id="e1c5da6d-7403-44ff-bd41-8e1b9a5a2d11" class="bulleted-list"><li>Information is not in one place. The BOW courses are all on different websites.</li></ul><ul id="9bf7b01d-ac8a-4159-9d3c-6d1b64445b16" class="bulleted-list"><li>Takes too long to find courses, check if the times work, and add them to your schedule</li></ul><ul id="908fd53e-3e41-428f-ad69-3e4269184ed8" class="bulleted-list"><li>There is no easy way to visualize a four year plan and keep it up to date with what is being offered at the moment</li></ul></div></p><p id="b092598d-9328-4ace-a954-e135c96b86e5" class="">With this information, we came up with requirements that addressed these problems. <div class="indented"><ul id="3ed87f71-d0e2-4e9d-bb83-8cfcb50a6c02" class="bulleted-list"><li>Easily browse courses from each BOW institution<ul id="ad051ab8-e50f-40b3-a168-5b725e1d002f" class="bulleted-list"><li>When course is offered</li></ul><ul id="ea922822-234e-430f-a017-6bec4094dda3" class="bulleted-list"><li>Who teaches it</li></ul><ul id="8bed5d08-f067-4340-b7f0-5b5aa5602b43" class="bulleted-list"><li>Student reviews</li></ul></li></ul><ul id="25a784ef-67cf-4a1b-bdba-427918051192" class="bulleted-list"><li>Stitch courses together to forge a four year roadmap<ul id="c2721545-c509-464c-8078-4760972f44e7" class="bulleted-list"><li>Ensure degree requirements are met</li></ul><ul id="209124ef-1464-4e14-a431-e1dd123cf8ff" class="bulleted-list"><li>Considers study abroad/LOA</li></ul></li></ul></div></p><p id="bcc28c45-60cf-44b3-bcd7-72723f69dd49" class="">After asking for feedback from the class, we determined the features we would need for an MVP and focused all our efforts there. We also came up with a rough outline of the technical challenges we expected to see. </p><figure id="5459d593-2535-46cf-a649-498b6d51825d" class="image"><a href="Documentation/Screen_Shot_2019-12-10_at_2.00.13_PM.png"><img style="width:1894px" src="Documentation/Screen_Shot_2019-12-10_at_2.00.13_PM.png"/></a></figure><p id="f2add0a8-cb58-4ff9-bb04-7e77517c818c" class="">We ended up using these technologies:</p><ul id="953e3c8c-6369-459b-be24-a42218e1870f" class="bulleted-list"><li>Flask for serving the application and querying the database<ul id="c8f96771-ecfa-4c36-b8ea-a3af7c551967" class="bulleted-list"><li>Pandas for storing and querying the course information</li></ul></li></ul><ul id="4a247072-2036-4cdf-a4d1-a9be3d0d201c" class="bulleted-list"><li>jQuery for working with HTML elements and python endpoints</li></ul><ul id="01b14665-44c3-43d5-ab5c-df31cc24def6" class="bulleted-list"><li>Bootstrap for the front end to make it look nice</li></ul><h2 id="5393eb6d-ecf1-41aa-8f3d-aeb4dd8b7bfa" class="">README</h2><h3 id="ccc0b1ec-e937-43e6-af37-1c5d5f67ff8b" class="">Installation, Prerequisites, and Quickstart</h3><p id="9b805cf6-d8ab-4dfc-9c0a-a4c74ce0c962" class="">You will need the following tools:</p><ul id="35ed88ad-2ca6-4444-9ed2-693341449012" class="bulleted-list"><li>virtualenvironment</li></ul><ul id="4a26efb5-9927-4c04-b98d-82332c9ae2ab" class="bulleted-list"><li>git</li></ul><pre id="8fb8ffa5-080a-4b25-afa3-495ce27ec4cd" class="code"><code>git clone https://github.com/jamesHo22/CoursePlanner9000.git
+virtualenvironment venv
+source venv/bin/activate
+pip install -r requirements.txt
+python app.py</code></pre><p id="14c91e36-c26b-4eca-84c9-35ea3ed4d615" class="">
+</p><h2 id="fe81f4c8-ce27-4cdc-bb1d-e40be501cdeb" class="">Implementation </h2><figure id="70f96170-c950-484a-9e12-0cc410366495" class="image"><a href="Documentation/Untitled.png"><img style="width:1726px" src="Documentation/Untitled.png"/></a></figure><p id="0d4ff735-5cf8-43e1-8959-14c5d9a056a4" class="">
+</p><p id="c014d5e6-5189-48d5-9501-108cd5ed382b" class="">
+</p></div></article></body></html>
