@@ -72,6 +72,8 @@ def updateCourseList():
 def documentation():
     full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'Untitled.png')
     full_filename_mvp = os.path.join(app.config['UPLOAD_FOLDER'], 'mvpPlan.png')
+
+    print(full_filename, full_filename_mvp)
     return render_template('Documentation2.html', diagram = full_filename, mvp = full_filename_mvp)
 
 if __name__ == '__main__':
