@@ -16,6 +16,9 @@ def checkRequiredCourses(requiredCourses, currentCourses):
 
 
 def getAllCourses():
+    '''
+    Reads from processed courses csv file and returns a pandas dataframe
+    '''
     cwd = Path.cwd()
     filePath = Path(cwd / 'formattedCourses.csv')
     courseTable = pd.read_csv(filePath)

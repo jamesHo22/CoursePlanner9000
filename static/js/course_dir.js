@@ -12,6 +12,7 @@ $(function() {
 function populate(jsonCourseList) {
     /**
      * This function dynamically populates the webpage with new content courses
+     * @param {JSON} jsonCourseList populates html elements with the JSON data
      */
     $('#courseList').empty();
     for (var key in jsonCourseList) {
@@ -45,6 +46,7 @@ function populate(jsonCourseList) {
                         <li>${startTime}</li>
                         <strong>End Time</strong>
                         <li>${endTime}</li>
+                        <button type="button" class="btn btn-primary">Add Course</button>
                     </div>
                 </div>
             </div>
