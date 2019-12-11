@@ -58,6 +58,7 @@ function populate(jsonCourseList) {
                         document.getElementById("button_${key}").onclick = function() {
                             console.log("${key} button was clicked")
                             addCourseToTable("${key}")
+                            getCurrentCourseList()
                         }
                         </script>
                     </div>
@@ -119,3 +120,12 @@ function updateCourseList() {
     
     return false;
 };
+
+function getCurrentCourseList() {
+    $.getJSON($SCRIPT_ROOT + '/_getAllCurrentCourses', "getCurrentCourses", function(data) {
+        // Do what you want with the data here
+        var queryResultJSON = JSON.parse(data.result)
+        console.log(queryResultJSON)
+        return queryResultJSON
+    });
+}

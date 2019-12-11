@@ -47,7 +47,7 @@ def getCurrentCourses():
     dictCourses = newUser.getCurrentCourses()
     indicies = [int(v) for v in dictCourses.values()]
     currentCourses = cp.getAllCourses().iloc[indicies].to_json(orient='index')
-    return currentCourses
+    return jsonify(result=currentCourses)
 
 @app.route('/_addCourseById')
 def addCourseById():
