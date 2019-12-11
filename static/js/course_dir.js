@@ -2,7 +2,7 @@
 
 // Listens to checkboxes and runs specific code
 $(function() {
-    // bind a button to the calculate tag
+    // bind a button to the checkboxes
     console.log("Filter pressed")
     $('#filterDiv :checkbox').bind('click', function() {
         updateCourseList();
@@ -16,6 +16,7 @@ function populate(jsonCourseList) {
      */
     $('#courseList').empty();
     for (var key in jsonCourseList) {
+        
         courseName = jsonCourseList[key].Name;
         instructor = jsonCourseList[key].Instructor;
         courseCode = jsonCourseList[key]["Course Code"];
@@ -46,15 +47,40 @@ function populate(jsonCourseList) {
                         <li>${startTime}</li>
                         <strong>End Time</strong>
                         <li>${endTime}</li>
-                        <button type="button" class="btn btn-primary">Add Course</button>
+                        <button id="button_${key}" type="button" class="btn btn-primary">Add Course</button>
+                        
+                        <!-- Currently putting this here just to get the site working. 
+                        // Will not assign a click listener for every element.
+                        // FIXME: Only make onclick listeners for open course boxes.
+                        -->
+        
+                        <script type=text/javascript> 
+                        document.getElementById("button_${key}").onclick = function() {
+                            console.log("${courseCode} button was clicked")
+                            addCourseToTable("${courseCode}")
+                        }
+                        </script>
                     </div>
                 </div>
             </div>
         `);
+
+        
     }
     
 };
 
+function addCourseToTable(courseCodeString) {
+    /**
+     * adds courseCode to a list on the server
+     * @param {String} courseCode: the code for the course the user wishes to add to the schedule
+     */
+    courseCodeJSON = {courseCode: courseCodeString}
+    $.getJSON($SCRIPT_ROOT + '/_addCourseById', courseCodeJSON, function(data) {
+        console.log(data)
+    })
+
+}
 
 function updateCourseList() {
     let queryParamsObject = {}
@@ -71,7 +97,6 @@ function updateCourseList() {
         queryResult = data.result
         var queryResultJSON = JSON.parse(queryResult)
         populate(queryResultJSON);
-        console.log(queryResult);
 
         // Trying out search, but doesn't currently work. Need to fix the input format.
         // Has to be a list of json objects

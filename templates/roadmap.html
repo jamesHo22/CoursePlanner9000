@@ -7,7 +7,21 @@
 <head>
 <link rel="stylesheet" href="{{ url_for('static', filename='../static/styles/roadmap.css') }}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type = "text/css" href = "{{url_for('static', filename = 'styles/course_dir.css')}}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.4.5/fuse.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<script type=text/javascript src="{{url_for('static', filename='js/course_dir.js')}}"></script>
+
 
 
 <script type=text/javascript>
@@ -21,7 +35,6 @@
 
 </head>
 
-
 <!-- <div class="search-container">
   <form action="/action_page.php">
     <input type="text" placeholder="Search.." name="search">
@@ -31,25 +44,44 @@
 
 <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'>
 
+
+<div id = "coursedir">
+  <div class="w3-container" id = "filterholder">
+    <b>Course Filter</b>
+    <div class="w3-card-4" style="width:30%;">
+      <div class="w3-container" style="padding: 0.5em 0 0.5em 0.75em;">
+        <div class="filter" id="filterDiv">
+          <!-- When using the filter class, you must specify the value attribute.
+          This value attribute will be used as a key to which box was checked -->
+          <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
+          <input id="filt_monday" type="checkbox" value="M"> Monday<br>
+          <input id="filt_tuesday" type="checkbox" value="T"> Tuesday<br>
+          <input id="filt_wednesday" type="checkbox" value="W"> Wednesday<br>
+          <input id="filt_thursday" type="checkbox" value="R"> Thursday<br>
+          <input id="filt_friday" type="checkbox" value="F"> Friday<br>
+        </div>
+    </div>
+  </div>
+  </div>
+
 <div class="credits">
   <table>
     <tbody>
       <tr>
         <td>Credits left</td>
-        <td>0</td>          
+        <td><span id=result>0</span></td>
       </tr>
       <tr>
         <td>AHS Credits</td>
-        <td>0</td>          
+        <td>0</td>
       </tr>
       <tr>
         <td>Other Requirements</td>
-        <td>0</td>          
+        <td>0</td>
       </tr>
     </tbody>
   </table>
-</div> 
-
+</div>
 
 
 <!-- Roadmap V2 -->
@@ -169,25 +201,20 @@
 </div>
 
 
-<div class="w3-container" id = "filterholder">
-    <b>Course Filter</b>
-    <div class="w3-card-4" style="width:30%;">
-      <div class="w3-container" style="padding: 0.75em 0 0.5em 0.75em;">
-        <div class="filter" id="filterDiv">
-          <!-- When using the filter class, you must specify the value attribute.
-          This value attribute will be used as a key to which box was checked -->
-          <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
-          <input id="filt_monday" type="checkbox" value="M"> Monday<br>
-          <input id="filt_tuesday" type="checkbox" value="T"> Tuesday<br>
-          <input id="filt_wednesday" type="checkbox" value="W"> Wednesday<br>
-          <input id="filt_thursday" type="checkbox" value="R"> Thursday<br>
-          <input id="filt_friday" type="checkbox" value="F"> Friday<br>
-        </div>
-    </div>
-  </div>
-  </div>
+<!-- Course Directoy Section -->
+<div id="courselist"></div>
+<!-- <style>
+#filterholder { position: absolute; left: 35px; top: 165px; }
+#table { position: absolute; right: 275px; top: 100px; }
+</style> -->
 
-  <div id="courseList" class="accordion"></div>
+<script>
+$(function(){
+  $("#courselist").load("../course_dir");
+});
+</script>
+
+
 
 
 <script type=text/javascript>
@@ -262,8 +289,11 @@ CLICK AND DRAG ITEMS
 
 </script> -->
 
+
+
+
 <!-- <script type=text/javascript>
-  $(function() {
+  $(function() {a
     $('a#calculate').bind('click', function() {
       $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
         a: $('input[name="a"]').val(),

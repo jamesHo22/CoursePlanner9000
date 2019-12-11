@@ -2,9 +2,11 @@ from flask import Flask, jsonify, render_template, request
 from flask import render_template
 from flask import jsonify
 from flask import request
+import User
 import courseProcessing as cp
 import pandas as pd
 import os
+import json
 
 # Added a static folder where we can upload pictures
 image_folder = os.path.join('static', 'image_folder')
@@ -21,13 +23,14 @@ def home():
 @app.route('/course_dir/')
 def course_dir():
     courses = cp.getAllCourses().values
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
+    full_filename = '/static/image_folder/logo.jpg'
     return render_template('course_dir.html', courses = courses, logo = full_filename)
 
 @app.route('/roadmap/')
 def roadmap():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
-    return render_template('roadmap.html', logo = full_filename)
+    courses = cp.getAllCourses().values
+    full_filename = '/static/image_folder/logo.jpg'
+    return render_template('roadmap.html', courses = courses, logo = full_filename)
 
 # Test method for requesting data
 @app.route('/_add_numbers')
@@ -41,10 +44,17 @@ def getCurrentCourses():
     '''Returns json of all the courses'''
     pass
 
+newUser = User.User()
 @app.route('/_addCourseById')
 def addCourseById():
     '''Looks at request and adds the course ID to a list'''
-    pass
+    # print(request.args.to_dict())
+    courseCode = request.args.to_dict()
+    course = courseCode['courseCode']
+    newUser.addCourse(course)
+    currentCoursesJSON = json.dumps(newUser.getCurrentCourses())
+    print(currentCoursesJSON)
+    return currentCoursesJSON
 
 @app.route('/_update_course_list')
 def updateCourseList():
@@ -56,13 +66,13 @@ def updateCourseList():
     filtWednesday = queryParamsDict['W']
     filtThursday = queryParamsDict['R']
     filtFriday = queryParamsDict['F']
-    
+
     # Build the query list
     queryList = []
     for i, v in queryParamsDict.items():
         if v == 'true':
             queryList.append(i)
-        
+
     updatedCourses = cp.filterCourses(queryList).to_json(orient='index')
     return jsonify(result=updatedCourses)
 
