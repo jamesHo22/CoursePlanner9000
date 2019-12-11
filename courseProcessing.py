@@ -187,6 +187,10 @@ def filterCourses(filters):
     else:
         return getAllCourses()
 
+def getCourseById(id):
+    '''returns the course with the specific row ID'''
+    allcoursesDF = getAllCourses()
+    return allcoursesDF.iloc[1]
 
 
 # TODO:

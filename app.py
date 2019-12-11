@@ -13,6 +13,7 @@ image_folder = os.path.join('static', 'image_folder')
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = image_folder
+newUser = User.User()
 
 @app.route('/')
 def home():
@@ -42,19 +43,21 @@ def add_numbers():
 @app.route('/_getAllCurrentCourses')
 def getCurrentCourses():
     '''Returns json of all the courses'''
-    pass
+    currentCoursesJSON = json.dumps(newUser.getCurrentCourses())
+    dictCourses = newUser.getCurrentCourses()
+    indicies = [int(v) for v in dictCourses.values()]
+    currentCourses = cp.getAllCourses().iloc[indicies].to_json(orient='index')
+    return jsonify(result=currentCourses)
 
-newUser = User.User()
 @app.route('/_addCourseById')
 def addCourseById():
     '''Looks at request and adds the course ID to a list'''
     # print(request.args.to_dict())
     courseCode = request.args.to_dict()
-    course = courseCode['courseCode']
+    course = courseCode['courseRowID']
     newUser.addCourse(course)
-    currentCoursesJSON = json.dumps(newUser.getCurrentCourses())
-    print(currentCoursesJSON)
-    return currentCoursesJSON
+    return 'None'
+    
 
 @app.route('/_update_course_list')
 def updateCourseList():
