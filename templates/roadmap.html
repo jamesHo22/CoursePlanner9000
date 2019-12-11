@@ -187,17 +187,42 @@
 
 
 <!-- Course Directoy Section -->
-<div id="courselist"></div>
-<!-- <style>
-#filterholder { position: absolute; left: 35px; top: 165px; }
-#table { position: absolute; right: 275px; top: 100px; }
-</style> -->
+<div id = "main">
+<div class="w3-container" id = "filterholder">
+  <b>Course Filter</b>
+  <div class="w3-card-4" style="width:94%;">
+    <div class="w3-container" style="padding: 0.5em 0 0.5em 0.75em;">
+      <div class="filter" id="filterDiv">
+        <!-- When using the filter class, you must specify the value attribute.
+        This value attribute will be used as a key to which box was checked -->
+        <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
+        <input id="filt_monday" type="checkbox" value="M"> Monday<br>
+        <input id="filt_tuesday" type="checkbox" value="T"> Tuesday<br>
+        <input id="filt_wednesday" type="checkbox" value="W"> Wednesday<br>
+        <input id="filt_thursday" type="checkbox" value="R"> Thursday<br>
+        <input id="filt_friday" type="checkbox" value="F"> Friday<br>
+      </div>
+  </div>
+</div>
+</div>
 
-<script>
-$(function(){
-  $("#courselist").load("../course_dir");
-});
-</script>
+<!-- Course HTML Table  -->
+<div class = "container" id = "table">
+
+<h1>Olin Course Directory</h1>
+<table style="width:100%" >
+  <!-- Table Header Row -->
+  <tr>
+    <th>Course Title</th>
+    <th>Professor</th>
+    <th>Credits</th>
+  </tr>
+</table>
+
+<div id="courseList" class="accordion"></div>
+
+</div>
+</div>
 
 
 
