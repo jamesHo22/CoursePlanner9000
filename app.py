@@ -21,13 +21,14 @@ def home():
 @app.route('/course_dir/')
 def course_dir():
     courses = cp.getAllCourses().values
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
+    full_filename = '/static/image_folder/logo.jpg'
     return render_template('course_dir.html', courses = courses, logo = full_filename)
 
 @app.route('/roadmap/')
 def roadmap():
-    full_filename = os.path.join(app.config['UPLOAD_FOLDER'], 'logo.jpg')
-    return render_template('roadmap.html', logo = full_filename)
+    courses = cp.getAllCourses().values
+    full_filename = '/static/image_folder/logo.jpg'
+    return render_template('roadmap.html', courses = courses, logo = full_filename)
 
 # Test method for requesting data
 @app.route('/_add_numbers')
@@ -56,13 +57,13 @@ def updateCourseList():
     filtWednesday = queryParamsDict['W']
     filtThursday = queryParamsDict['R']
     filtFriday = queryParamsDict['F']
-    
+
     # Build the query list
     queryList = []
     for i, v in queryParamsDict.items():
         if v == 'true':
             queryList.append(i)
-        
+
     updatedCourses = cp.filterCourses(queryList).to_json(orient='index')
     return jsonify(result=updatedCourses)
 
