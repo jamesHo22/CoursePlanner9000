@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module courseProcessing</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>courseProcessing</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/Users/jamesho/Documents/Olin/SOFTDES/CoursePlanner9000/courseProcessing.py">/Users/jamesho/Documents/Olin/SOFTDES/CoursePlanner9000/courseProcessing.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="User.html">User</a><br>
+</td><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="pandas.html">pandas</a><br>
+</td><td width="25%" valign=top><a href="re.html">re</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-checkRequiredCourses"><strong>checkRequiredCourses</strong></a>(requiredCourses, currentCourses)</dt><dd><tt>This&nbsp;method&nbsp;will&nbsp;take&nbsp;in&nbsp;a&nbsp;list&nbsp;of&nbsp;required&nbsp;courses&nbsp;and&nbsp;current&nbsp;courses&nbsp;and&nbsp;return&nbsp;the&nbsp;courses&nbsp;you&nbsp;still&nbsp;need</tt></dd></dl>
+ <dl><dt><a name="-filterCourses"><strong>filterCourses</strong></a>(filters)</dt><dd><tt>This&nbsp;function&nbsp;will&nbsp;take&nbsp;in&nbsp;some&nbsp;query&nbsp;parameters&nbsp;and&nbsp;filter&nbsp;the&nbsp;formatted&nbsp;courses<br>
+&nbsp;<br>
+:param&nbsp;filters:&nbsp;a&nbsp;list&nbsp;containing&nbsp;the&nbsp;columns&nbsp;to&nbsp;perform&nbsp;an&nbsp;AND&nbsp;query&nbsp;on<br>
+:returns:&nbsp;dictionary&nbsp;of&nbsp;all&nbsp;the&nbsp;filtered&nbsp;courses&nbsp;and&nbsp;their&nbsp;information</tt></dd></dl>
+ <dl><dt><a name="-formatCourses"><strong>formatCourses</strong></a>()</dt><dd><tt>takes&nbsp;the&nbsp;course&nbsp;data&nbsp;from&nbsp;my.olin.edu&nbsp;and&nbsp;creates&nbsp;a&nbsp;table&nbsp;with&nbsp;the&nbsp;corrent&nbsp;columns</tt></dd></dl>
+ <dl><dt><a name="-getAllCourses"><strong>getAllCourses</strong></a>()</dt><dd><tt>Reads&nbsp;from&nbsp;processed&nbsp;courses&nbsp;csv&nbsp;file&nbsp;and&nbsp;returns&nbsp;a&nbsp;pandas&nbsp;dataframe</tt></dd></dl>
+ <dl><dt><a name="-getCourseById"><strong>getCourseById</strong></a>(id)</dt><dd><tt>returns&nbsp;the&nbsp;course&nbsp;with&nbsp;the&nbsp;specific&nbsp;row&nbsp;ID</tt></dd></dl>
+ <dl><dt><a name="-getCourseInfo"><strong>getCourseInfo</strong></a>(text)</dt><dd><tt>Parses&nbsp;the&nbsp;description&nbsp;the&nbsp;'Faculty&nbsp;/&nbsp;Schedule'&nbsp;column&nbsp;of&nbsp;the&nbsp;csv&nbsp;from&nbsp;my.olin.edu&nbsp;add/drop<br>
+and&nbsp;creates&nbsp;a&nbsp;dataframe&nbsp;with&nbsp;the&nbsp;correct&nbsp;columns<br>
+text:&nbsp;String,&nbsp;the&nbsp;text&nbsp;you&nbsp;want&nbsp;to&nbsp;parse.</tt></dd></dl>
+ <dl><dt><a name="-getDateTime"><strong>getDateTime</strong></a>(dateString)</dt><dd><tt>This&nbsp;function&nbsp;takes&nbsp;in&nbsp;the&nbsp;string&nbsp;that&nbsp;represents&nbsp;a&nbsp;time&nbsp;and&nbsp;returns&nbsp;a&nbsp;datetime&nbsp;object<br>
+dateString:&nbsp;String,&nbsp;represents&nbsp;the&nbsp;time&nbsp;00:00AM&nbsp;as&nbsp;an&nbsp;example</tt></dd></dl>
+ <dl><dt><a name="-getWeekdays"><strong>getWeekdays</strong></a>(days)</dt><dd><tt>Given&nbsp;a&nbsp;string&nbsp;of&nbsp;characters,&nbsp;converts&nbsp;it&nbsp;into&nbsp;a&nbsp;boolean&nbsp;tuple&nbsp;with&nbsp;length&nbsp;of&nbsp;7,&nbsp;<br>
+each&nbsp;representing&nbsp;whether&nbsp;or&nbsp;not&nbsp;the&nbsp;course&nbsp;is&nbsp;offered&nbsp;on&nbsp;each&nbsp;day<br>
+days:&nbsp;String,&nbsp;with&nbsp;characters&nbsp;in&nbsp;MTWRT&nbsp;representing&nbsp;when&nbsp;each&nbsp;class&nbsp;is&nbsp;offered&nbsp;in&nbsp;the&nbsp;week<br>
+returns:&nbsp;Tuple,&nbsp;indexed&nbsp;monday&nbsp;to&nbsp;friday&nbsp;in&nbsp;order.&nbsp;1&nbsp;means&nbsp;offered,&nbsp;0&nbsp;means&nbsp;not</tt></dd></dl>
+</td></tr></table>
+</body></html>
