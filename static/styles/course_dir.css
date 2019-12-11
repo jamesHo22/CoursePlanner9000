@@ -2,11 +2,11 @@
 
 #filterholder {
     position: relative;
-    left: -250px;
-    top: 75px;
+    left: 0px;
+    top: 50px;
 }
 #table {
     position: relative;
-    right: -200px;
-    top: -165px;
+    right: 0px;
+    top:  100px;
 }
