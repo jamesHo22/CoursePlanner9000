@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
+
+<script type=text/javascript>
+  $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+</script>
+<script type=text/javascript src="{{url_for('static', filename='js/roadmap.js')}}"></script>
+
+
+
 <title>Course Planner 9000</title>
 
 </head>
@@ -28,7 +36,7 @@
     <tbody>
       <tr>
         <td>Credits left</td>
-        <td><span id=result>0</span></td>          
+        <td>0</td>          
       </tr>
       <tr>
         <td>AHS Credits</td>
@@ -43,38 +51,22 @@
 </div> 
 
 
+
 <!-- Roadmap V2 -->
 <div id="main">
   <div class="roadmap">
-    <table>
-      <thead>
-        <tr>
-          <th>Sem1</th>
-          <th>Sem2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>DesNat</td>
-          <td>QEA 1</td>
-        </tr>
-        <tr>
-          <td>ModSim</td>
-          <td>P&M</td>
-        </tr>
-        <tr>
-          <td>ISIM</td>
-          <td>SoftDes</td>
-        </tr>
-        <tr>
-          <td>Digital Eye</td>
-          <td> </td>
-        </tr>
-        <tr>
-          <td>OFYI</td>
-          <td> </td>
-        </tr>
-      </tbody>
+    <table id="sem1">
+      <tr>
+        <th>Sem1</th>
+        <th>Sem2</th>
+      </tr>
+      <tr>
+        <td>DesNat</td>
+        <td>QEA 1</td>
+      <tr>
+          <td>row 2, cell 1</td>
+          <td>row 2, cell 2</td>
+      </tr>
     </table>
 
   </div>
@@ -180,6 +172,27 @@
 </div>
 
 
+<div class="w3-container" id = "filterholder">
+    <b>Course Filter</b>
+    <div class="w3-card-4" style="width:30%;">
+      <div class="w3-container" style="padding: 0.75em 0 0.5em 0.75em;">
+        <div class="filter" id="filterDiv">
+          <!-- When using the filter class, you must specify the value attribute.
+          This value attribute will be used as a key to which box was checked -->
+          <input id="filt_general_req" type="checkbox" value="filtGenGradReq"> General Graduation Requirements<br>
+          <input id="filt_monday" type="checkbox" value="M"> Monday<br>
+          <input id="filt_tuesday" type="checkbox" value="T"> Tuesday<br>
+          <input id="filt_wednesday" type="checkbox" value="W"> Wednesday<br>
+          <input id="filt_thursday" type="checkbox" value="R"> Thursday<br>
+          <input id="filt_friday" type="checkbox" value="F"> Friday<br>
+        </div>
+    </div>
+  </div>
+  </div>
+
+  <div id="courseList" class="accordion"></div>
+
+
 <!-- CLICK AND DRAG ITEMS
     
     
@@ -248,6 +261,8 @@
 <script type=text/javascript>
   $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
 </script>
+
+
 
 <!-- <script type=text/javascript>
   $(function() {
