@@ -53,6 +53,12 @@ function populate(jsonCourseList) {
         `);
     }
     
+
+    $('#sem1 tr').not(':first').not(':last').remove();
+    var html = '';
+    for(var i = 0; i < data.d.length; i++)
+                html += '<tr><td>' + data.d[i].FirstName + '</td><td>' + data.d[i].Age + '</td></tr>';
+    $('#sem1 tr').first().after(html);
 };
 
 
