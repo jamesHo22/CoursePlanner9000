@@ -10,7 +10,8 @@ class User:
         This function takes in a course code and adds it to a list.
         @param {str} courseRowID: the rowID for the course the user wishes to add to the schedule
         '''
-        self.currentCourses.append(courseCode)
+        if courseRowID not in self.currentCourses:
+            self.currentCourses.append(courseRowID)
     
     def getCurrentCourses(self):
         '''
