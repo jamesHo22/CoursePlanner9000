@@ -70,12 +70,12 @@ function populate(jsonCourseList) {
     
 };
 
-function addCourseToTable(courseCodeString) {
+function addCourseToTable(courseCodeID) {
     /**
      * adds courseCode to a list on the server
      * @param {String} courseCode: the code for the course the user wishes to add to the schedule
      */
-    courseCodeJSON = {courseCode: courseCodeString}
+    courseCodeJSON = {courseRowID: courseCodeID}
     $.getJSON($SCRIPT_ROOT + '/_addCourseById', courseCodeJSON, function(data) {
         console.log(data)
     })
