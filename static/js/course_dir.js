@@ -56,8 +56,8 @@ function populate(jsonCourseList) {
         
                         <script type=text/javascript> 
                         document.getElementById("button_${key}").onclick = function() {
-                            console.log("${courseCode} button was clicked")
-                            addCourseToTable("${courseCode}")
+                            console.log("${key} button was clicked")
+                            addCourseToTable("${key}")
                         }
                         </script>
                     </div>

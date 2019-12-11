@@ -5,11 +5,10 @@ class User:
         '''
         self.currentCourses = list()
     
-    def addCourse(self, courseCode):
+    def addCourse(self, courseRowID):
         '''
         This function takes in a course code and adds it to a list.
-        @param {str} courseCode: the code for the course the user wishes to add to the schedule
-        
+        @param {str} courseRowID: the rowID for the course the user wishes to add to the schedule
         '''
         self.currentCourses.append(courseCode)
     
@@ -17,7 +16,10 @@ class User:
         '''
         returns a list of all the current courses
         '''
-        return self.currentCourses
+        courses = dict()
+        for i,v in enumerate(self.currentCourses):
+            courses[i] = v
+        return courses
 
     def clearCourses(self):
         '''
