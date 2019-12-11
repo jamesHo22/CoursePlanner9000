@@ -51,7 +51,7 @@ def addCourseById():
     course = courseCode['courseCode']
     newUser.addCourse(course)
     print(newUser.getCurrentCourses())
-    return 'None'
+    return jsonify(result=str(newUser.getCurrentCourses()))
 
 @app.route('/_update_course_list')
 def updateCourseList():

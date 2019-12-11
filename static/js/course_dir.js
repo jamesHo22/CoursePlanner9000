@@ -76,7 +76,9 @@ function addCourseToTable(courseCodeString) {
      * @param {String} courseCode: the code for the course the user wishes to add to the schedule
      */
     courseCodeJSON = {courseCode: courseCodeString}
-    $.getJSON($SCRIPT_ROOT + '/_addCourseById', courseCodeJSON)
+    $.getJSON($SCRIPT_ROOT + '/_addCourseById', courseCodeJSON, function(data) {
+        console.log(data)
+    })
 
 }
 
