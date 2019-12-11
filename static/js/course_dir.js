@@ -126,6 +126,18 @@ function getCurrentCourseList() {
         // Do what you want with the data here
         var queryResultJSON = JSON.parse(data.result)
         console.log(queryResultJSON)
-        return queryResultJSON
+        addToRoadmap(queryResultJSON)
     });
+}
+
+function addToRoadmap(currentCourses) {
+    $('#sem1 tr').not(':first').remove();
+    var html = '';
+    console.log(currentCourses)
+    
+    for (var key in currentCourses)
+
+            html += '<tr><td>' + currentCourses[key].Name + '</td><td>' + currentCourses[key].Name + '</td></tr>';
+            
+    $('#sem1 tr').first().after(html);
 }
