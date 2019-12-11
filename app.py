@@ -6,6 +6,7 @@ import User
 import courseProcessing as cp
 import pandas as pd
 import os
+import json
 
 # Added a static folder where we can upload pictures
 image_folder = os.path.join('static', 'image_folder')
@@ -46,12 +47,13 @@ newUser = User.User()
 @app.route('/_addCourseById')
 def addCourseById():
     '''Looks at request and adds the course ID to a list'''
-    print(request.args.to_dict())
+    # print(request.args.to_dict())
     courseCode = request.args.to_dict()
     course = courseCode['courseCode']
     newUser.addCourse(course)
-    print(newUser.getCurrentCourses())
-    return jsonify(result=str(newUser.getCurrentCourses()))
+    currentCoursesJSON = json.dumps(newUser.getCurrentCourses())
+    print(currentCoursesJSON)
+    return currentCoursesJSON
 
 @app.route('/_update_course_list')
 def updateCourseList():
