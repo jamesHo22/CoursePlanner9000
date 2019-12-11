@@ -3,6 +3,7 @@ from pathlib import Path
 import re
 from datetime import datetime
 import numpy as np
+import User
 # Read the data as a dataframe
 
 
@@ -185,9 +186,9 @@ def filterCourses(filters):
         return allCoursesDF.query(dfQuery, inplace=False)
     else:
         return getAllCourses()
-# %%
 
-# %%
+
+
 # TODO:
 # Make a SQL database with these columns
 # ID (auto id), 

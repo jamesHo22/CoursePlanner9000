@@ -2,6 +2,7 @@ from flask import Flask, jsonify, render_template, request
 from flask import render_template
 from flask import jsonify
 from flask import request
+import User
 import courseProcessing as cp
 import pandas as pd
 import os
@@ -41,10 +42,16 @@ def getCurrentCourses():
     '''Returns json of all the courses'''
     pass
 
+newUser = User.User()
 @app.route('/_addCourseById')
 def addCourseById():
     '''Looks at request and adds the course ID to a list'''
-    pass
+    print(request.args.to_dict())
+    courseCode = request.args.to_dict()
+    course = courseCode['courseCode']
+    newUser.addCourse(course)
+    print(newUser.getCurrentCourses())
+    return 'None'
 
 @app.route('/_update_course_list')
 def updateCourseList():
